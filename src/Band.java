@@ -1,5 +1,8 @@
+package src;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 public class Band extends BasicInfo {
     private int endYear;
@@ -43,4 +46,28 @@ public class Band extends BasicInfo {
     public void setInfoAboutMembersQuit(ArrayList<String> infoAboutMembersQuit) {
         this.infoAboutMembersQuit = infoAboutMembersQuit;
     }
+    public void addAlbumToBand(Album album ){
+        if ( !albums.contains(album)) {
+                albums.add(album);
+            }
+    }
+    public void removeAlbumFromBand(Album album){
+        for (Iterator<Album> it = albums.iterator(); it.hasNext(); ) {
+            Album item = it.next();
+            if (item == album ) {
+                it.remove();
+            }
+        }
+    }
+    public void addMusicianToBand(Musician musician, String name ){
+        if ( !membersAndJoinYear.containsKey(musician)) {
+            membersAndJoinYear.put(musician, name);
+        }
+    }
+    public void removeMusicianFromBand(Musician musician){
+      if (membersAndJoinYear.containsKey(musician)){
+          membersAndJoinYear.remove(musician);
+      }
+    }
 }
+
