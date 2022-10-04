@@ -2,14 +2,14 @@ public class BasicInfo {
     private String name;
     private String genres;
     private int NumberOfMembers;
-    private int EstablishYear;
+    private int year;
 
 
-    public BasicInfo(String name, String genres, int numberOfMembers, int establishYear) {
+    public BasicInfo(String name, String genres, int numberOfMembers, int year) {
         this.name = name;
         this.genres = genres;
         this.NumberOfMembers = numberOfMembers;
-        this.EstablishYear = establishYear;
+        this.year = year;
     }
 
     public String getName() {
@@ -36,12 +36,12 @@ public class BasicInfo {
         NumberOfMembers = numberOfMembers;
     }
 
-    public int getEstablishYear() {
-        return EstablishYear;
+    public int getYear() {
+        return year;
     }
 
-    public void setEstablishYear(int establishYear) {
-        EstablishYear = establishYear;
+    public void setYear(int year) {
+        year = year;
     }
 
 }
