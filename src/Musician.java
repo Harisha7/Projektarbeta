@@ -10,6 +10,8 @@ public class Musician {
     
     HashMap<Album, String> soloAlbum = new HashMap<>();
     
+    ArrayList<String> instruments = new ArrayList<>();
+    
     
     public Musician(String name, String infoText, int yearOfBirth){
         this.name = name;
@@ -52,5 +54,13 @@ public class Musician {
     
     Public void setSoloAlbum(HashMap<Album,String> soloAlbum){
         this.soloAlbum = soloAlbum;
-    }   
+    }
+    
+    public ArrayList<String> getInstruments(){
+         return instruments;
+     }
+    
+    public void setInstruments(ArrayList<String> instruments){
+        this.instruments = instruments;
+    }
 }
