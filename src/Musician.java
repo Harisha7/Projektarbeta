@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Musician extends BasicInfo {
+public class Musician {
     
     
     ArrayList<Band> currentBands = new ArrayList<>();
