@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Musician extends BasicInfo {
+public class Musician {
     
     
     ArrayList<Band> currentBands = new ArrayList<>();
@@ -9,6 +9,8 @@ public class Musician extends BasicInfo {
     ArrayList<Band> oldBands = new ArrayList<>();
     
     HashMap<Album, String> soloAlbum = new HashMap<>();
+    
+    ArrayList<String> instruments = new ArrayList<>();
     
     
     public Musician(String name, String infoText, int yearOfBirth){
@@ -52,5 +54,13 @@ public class Musician extends BasicInfo {
     
     Public void setSoloAlbum(HashMap<Album,String> soloAlbum){
         this.soloAlbum = soloAlbum;
-    }   
+    }
+    
+    public ArrayList<String> getInstruments(){
+         return instruments;
+     }
+    
+    public void setInstruments(ArrayList<String> instruments){
+        this.instruments = instruments;
+    }
 }

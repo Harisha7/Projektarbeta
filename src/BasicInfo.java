@@ -1,8 +1,11 @@
 public class BasicInfo {
     private String name;
     private String genres;
+
     private int NumberOfMembers;
     private int year;
+
+ 
 
 
     public BasicInfo(String name, String genres, int numberOfMembers, int year) {
