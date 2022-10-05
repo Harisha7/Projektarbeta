@@ -1,7 +1,7 @@
 public class BasicInfo {
     private String name;
     private String genres;
-    private int NumberOfMembers;
+    private int numberOfMembers;
     private int EstablishYear;
 
 
