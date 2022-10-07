@@ -9,7 +9,7 @@ public class Main {
     BasicInfo.add("Steve", "EDM", 0, 1990);
     Musician.add("George", "New-age", 1980);
     Band.add("Jumping rocks", "EDM rap", 2005);
-    Album alb1 = news Album("songName", "artistName", "albumName", songs, 1980  );
+    Album alb1 = new Album("songName", "artistName", "albumName", songs, 1980  );
 
     userString = in.next();
     userInt = in.nextInt();
@@ -53,14 +53,42 @@ public class Main {
     }
 
     public void addMusician {
-            String userTypeMusician = in.nextString();
+            String userTypeMusician = in.next();
             System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played")
             Musician.add(userTypeMusician);
         }
 // Add function to disallow empty character input
     public void addAlbum {
         String userTypeAlbum = in.next();
-        System.out.println("Add an Album n in this format: Song name, artist nname, album name, year of release NNNN")
+        System.out.println("Add an Album in this format: Song name, artist name, album name, year of release NNNN")
                 Album.add(userTypeAlbum);
+        }
+
+        //Show list of band first, then give user option to delete based on order in list
+    public void removeBand {
+            for (BasicInfo dispBand : Band) {
+                System.out.println(dispBand.getBand(name, info));
+            }
+            System.out.println("Remove a band by typing the order of the band, top = 1");
+            int userRemoveBand = in.nextInt();
+            Band.remove((userRemoveBand) - 1);
+        }
+
+        //Show list of Musician first, then give user option to delete based on order in list
+    public void removeMusician {
+            for (String dispMusician : Musician) {
+                System.out.println(dispMusician.getMusician(name, info));
+                System.out.println(current)
+            }
+            int userRemoveMusician = in.nextInt();
+            Musician.remove((userRemoveMusician) - 1);
+        }
+
+    public void removeAlbum {
+            for (Album dispAlbum : songs) {
+                System.out.println(dispAlbum.getAlbum());
+            }
+            int userRemoveAlbum = in.nextInt();
+            Musician.remove((userRemoveAlbum) - 1);
         }
 }
