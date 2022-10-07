@@ -3,6 +3,10 @@ import java.util.HashMap;
 
 public class Musician {
     
+    private String name;
+    private String infoText;
+    private int yearOfBirth;
+    
     
     ArrayList<Band> currentBands = new ArrayList<>();
     
