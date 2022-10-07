@@ -1,0 +1,332 @@
+Index: src/Band.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package src;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.Iterator;\nimport java.util.List;\n\npublic class Band extends BasicInfo {\n    private int endYear;\n    HashMap<Musician, String> membersAndJoinYear = new HashMap<Musician, String>();\n    ArrayList<Album> albums = new ArrayList<Album>();\n    ArrayList<String> infoAboutMembersQuit = new ArrayList<String>();\n\n    public Band(String name, String info, int birthYear, int endYear) {\n        super(name, info, birthYear);\n        this.endYear = endYear;\n    }\n\n    public int getEndYear() {\n        return endYear;\n    }\n\n    public void setEndYear(int endYear) {\n        this.endYear = endYear;\n    }\n\n    public HashMap<Musician, String> getMembersAndJoinYear() {\n        return membersAndJoinYear;\n    }\n\n    public void setMembersAndJoinYear(HashMap<Musician, String> membersAndJoinYear) {\n        this.membersAndJoinYear = membersAndJoinYear;\n    }\n    //return list of albums\n    public ArrayList<Album> getAlbums() {\n        return albums;\n    }\n\n    public void setAlbums(ArrayList<Album> albums) {\n        this.albums = albums;\n    }\n\n    public ArrayList<String> getInfoAboutMembersQuit() {\n        return infoAboutMembersQuit;\n    }\n\n    public void setInfoAboutMembersQuit(ArrayList<String> infoAboutMembersQuit) {\n        this.infoAboutMembersQuit = infoAboutMembersQuit;\n    }\n    public void addAlbumToBand(Album album ){\n        if ( !albums.contains(album)) {\n                albums.add(album);\n            }\n    }\n    public void removeAlbumFromBand(Album album){\n        for (Iterator<Album> it = albums.iterator(); it.hasNext(); ) {\n            Album item = it.next();\n            if (item == album ) {\n                it.remove();\n            }\n        }\n    }\n    public void addMusicianToBand(Musician musician, String name ){\n        if ( !membersAndJoinYear.containsKey(musician)) {\n            membersAndJoinYear.put(musician, name);\n        }\n    }\n    public void removeMusicianFromBand(Musician musician){\n      if (membersAndJoinYear.containsKey(musician)){\n          membersAndJoinYear.remove(musician);\n      }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Band.java b/src/Band.java
+--- a/src/Band.java	(revision 015a06bcfb34b107fe7c079d036fdecde30a59a5)
++++ b/src/Band.java	(date 1665046512521)
+@@ -1,17 +1,18 @@
+ package src;
++
+ import java.util.ArrayList;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.List;
+ 
+-public class Band extends BasicInfo {
++public class Band extends BasicinfoText {
+     private int endYear;
+     HashMap<Musician, String> membersAndJoinYear = new HashMap<Musician, String>();
+     ArrayList<Album> albums = new ArrayList<Album>();
+-    ArrayList<String> infoAboutMembersQuit = new ArrayList<String>();
++    ArrayList<String> infoTextAboutMembersQuit = new ArrayList<String>();
+ 
+-    public Band(String name, String info, int birthYear, int endYear) {
+-        super(name, info, birthYear);
++    public Band(String name, String infoText, int birthYear, int endYear) {
++        super(name, infoText, birthYear);
+         this.endYear = endYear;
+     }
+ 
+@@ -30,7 +31,8 @@
+     public void setMembersAndJoinYear(HashMap<Musician, String> membersAndJoinYear) {
+         this.membersAndJoinYear = membersAndJoinYear;
+     }
+-    //return list of albums
++
++    // return list of albums
+     public ArrayList<Album> getAlbums() {
+         return albums;
+     }
+@@ -39,35 +41,38 @@
+         this.albums = albums;
+     }
+ 
+-    public ArrayList<String> getInfoAboutMembersQuit() {
+-        return infoAboutMembersQuit;
++    public ArrayList<String> getinfoTextAboutMembersQuit() {
++        return infoTextAboutMembersQuit;
+     }
+ 
+-    public void setInfoAboutMembersQuit(ArrayList<String> infoAboutMembersQuit) {
+-        this.infoAboutMembersQuit = infoAboutMembersQuit;
++    public void setinfoTextAboutMembersQuit(ArrayList<String> infoTextAboutMembersQuit) {
++        this.infoTextAboutMembersQuit = infoTextAboutMembersQuit;
+     }
+-    public void addAlbumToBand(Album album ){
+-        if ( !albums.contains(album)) {
+-                albums.add(album);
+-            }
++
++    public void addAlbumToBand(Album album) {
++        if (!albums.contains(album)) {
++            albums.add(album);
++        }
+     }
+-    public void removeAlbumFromBand(Album album){
+-        for (Iterator<Album> it = albums.iterator(); it.hasNext(); ) {
++
++    public void removeAlbumFromBand(Album album) {
++        for (Iterator<Album> it = albums.iterator(); it.hasNext();) {
+             Album item = it.next();
+-            if (item == album ) {
++            if (item == album) {
+                 it.remove();
+             }
+         }
+     }
+-    public void addMusicianToBand(Musician musician, String name ){
+-        if ( !membersAndJoinYear.containsKey(musician)) {
++
++    public void addMusicianToBand(Musician musician, String name) {
++        if (!membersAndJoinYear.containsKey(musician)) {
+             membersAndJoinYear.put(musician, name);
+         }
+     }
+-    public void removeMusicianFromBand(Musician musician){
+-      if (membersAndJoinYear.containsKey(musician)){
+-          membersAndJoinYear.remove(musician);
+-      }
++
++    public void removeMusicianFromBand(Musician musician) {
++        if (membersAndJoinYear.containsKey(musician)) {
++            membersAndJoinYear.remove(musician);
++        }
+     }
+ }
+-
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" default=\"true\" project-jdk-name=\"openjdk-18\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 015a06bcfb34b107fe7c079d036fdecde30a59a5)
++++ b/.idea/misc.xml	(date 1664970036262)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/BasicInfo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class BasicInfo {\n    private String name;\n    private String genres;\n    private int numberOfMembers;\n    private int EstablishYear;\n\n\n    public BasicInfo(String name, String genres, int numberOfMembers, int establishYear) {\n        this.name = name;\n        this.genres = genres;\n        this.NumberOfMembers = numberOfMembers;\n        this.EstablishYear = establishYear;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getGenres() {\n        return genres;\n    }\n\n    public void setGenres(String genres) {\n        this.genres = genres;\n    }\n\n    public int getNumberOfMembers() {\n        return NumberOfMembers;\n    }\n\n    public void setNumberOfMembers(int numberOfMembers) {\n        NumberOfMembers = numberOfMembers;\n    }\n\n    public int getEstablishYear() {\n        return EstablishYear;\n    }\n\n    public void setEstablishYear(int establishYear) {\n        EstablishYear = establishYear;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/BasicInfo.java b/src/BasicInfo.java
+--- a/src/BasicInfo.java	(revision 015a06bcfb34b107fe7c079d036fdecde30a59a5)
++++ b/src/BasicInfo.java	(date 1665055861596)
+@@ -1,11 +1,10 @@
+-public class BasicInfo {
++public class BasicinfoText {
+     private String name;
+     private String genres;
+     private int numberOfMembers;
+     private int EstablishYear;
+ 
+-
+-    public BasicInfo(String name, String genres, int numberOfMembers, int establishYear) {
++    public Basicinfo(String name, String genres, int numberOfMembers, int establishYear) {
+         this.name = name;
+         this.genres = genres;
+         this.NumberOfMembers = numberOfMembers;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"85103994-559b-4a0d-81f5-fb6190d19837\" name=\"Changes\" comment=\"Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2FOkotIdINHC48qIdvwBbhgauMb\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"85103994-559b-4a0d-81f5-fb6190d19837\" name=\"Changes\" comment=\"\" />\n      <created>1664370696065</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1664370696065</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"inital commit\">\n      <created>1664370743243</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664370743243</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"initial commit\">\n      <created>1664370762082</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664370762082</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.\">\n      <created>1664443477516</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664443477516</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.\">\n      <created>1664443742732</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664443742732</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"inital commit\" />\n    <MESSAGE value=\"initial commit\" />\n    <MESSAGE value=\"Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 015a06bcfb34b107fe7c079d036fdecde30a59a5)
++++ b/.idea/workspace.xml	(date 1665055654687)
+@@ -4,8 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.">
++    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="Create BasicinfoText.java class which contains the basic infoTextrmation of the band, it has constructor and getter setter method.">
++      <change afterPath="$PROJECT_DIR$/src/Album.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/BasicInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicInfo.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Musician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Musician.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,16 +24,18 @@
+     <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2FOkotIdINHC48qIdvwBbhgauMb" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
++  }
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -52,14 +59,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1664370762082</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.">
++    <task id="LOCAL-00003" summary="Create BasicinfoText.java class which contains the basic infoTextrmation of the band, it has constructor and getter setter method.">
+       <created>1664443477516</created>
+       <option name="number" value="00003" />
+       <option name="presentableId" value="LOCAL-00003" />
+       <option name="project" value="LOCAL" />
+       <updated>1664443477516</updated>
+     </task>
+-    <task id="LOCAL-00004" summary="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method.">
++    <task id="LOCAL-00004" summary="Create BasicinfoText.java class which contains the basic infoTextrmation of the band, it has constructor and getter setter method.">
+       <created>1664443742732</created>
+       <option name="number" value="00004" />
+       <option name="presentableId" value="LOCAL-00004" />
+@@ -83,8 +90,8 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="inital commit" />
+     <MESSAGE value="initial commit" />
+-    <MESSAGE value="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method." />
++    <MESSAGE value="Create BasicinfoText.java class which contains the basic infoTextrmation of the band, it has constructor and getter setter method." />
++    <option name="LAST_COMMIT_MESSAGE" value="Create BasicinfoText.java class which contains the basic infoTextrmation of the band, it has constructor and getter setter method." />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: src/Musician.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\nimport java.util.HashMap;\n\npublic class Musician {\n    \n    \n    ArrayList<Band> currentBands = new ArrayList<>();\n    \n    ArrayList<Band> oldBands = new ArrayList<>();\n    \n    HashMap<Album, String> soloAlbum = new HashMap<>();\n    \n    ArrayList<String> instruments = new ArrayList<>();\n    \n    \n    public Musician(String name, String infoText, int yearOfBirth){\n        this.name = name;\n        this.infoText = infoText;\n        this.yearOfBirth = yearOfBirth;\n    }\n\n    public String getName(){\n\n        return name;\n    }\n\n    public String getInfoText(){\n\n        return infoText;\n    }\n    public int getYearOfBirth(){\n\n        return yearOfBirth;\n    }\n     public ArrayList<Band> getCurrentBands(){\n         return currentBands;\n     }\n    \n    public void setCurrentBands(ArrayList<Band>currentBands){\n        this.currentBands = currentBands;\n    }\n    \n    public ArrayList<Band> getOldBands(){\n         return oldBands;\n     }\n    \n    public void setOldBands(ArrayList<Band>currentBands){\n        this.oldBands = oldBands;\n    }\n    \n    public HashMap<Album, String> getSoloAlbum(){\n        return soloAlbum;\n    }\n    \n    Public void setSoloAlbum(HashMap<Album,String> soloAlbum){\n        this.soloAlbum = soloAlbum;\n    }\n    \n    public ArrayList<String> getInstruments(){\n         return instruments;\n     }\n    \n    public void setInstruments(ArrayList<String> instruments){\n        this.instruments = instruments;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Musician.java b/src/Musician.java
+--- a/src/Musician.java	(revision 015a06bcfb34b107fe7c079d036fdecde30a59a5)
++++ b/src/Musician.java	(date 1665046512483)
+@@ -13,9 +13,9 @@
+     ArrayList<String> instruments = new ArrayList<>();
+     
+     
+-    public Musician(String name, String infoText, int yearOfBirth){
++    public Musician(String name, String infoTextText, int yearOfBirth){
+         this.name = name;
+-        this.infoText = infoText;
++        this.infoTextText = infoTextText;
+         this.yearOfBirth = yearOfBirth;
+     }
+ 
+@@ -24,9 +24,9 @@
+         return name;
+     }
+ 
+-    public String getInfoText(){
++    public String getinfoTextText(){
+ 
+-        return infoText;
++        return infoTextText;
+     }
+     public int getYearOfBirth(){
+ 
+Index: src/Album.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Album.java b/src/Album.java
+new file mode 100644
+--- /dev/null	(date 1665055753143)
++++ b/src/Album.java	(date 1665055753143)
+@@ -0,0 +1,65 @@
++public class Album {
++
++    public String name; // album name
++    public String artist;
++    public String album;
++    public int year;
++
++    public Song(String songName, String artistName, String albumName, int yearofRelease) {
++        this.name = songName;
++        this.artist = artistName;
++        this.album = albumName;
++        this.year = yearofRelease;
++    }
++    public void setName(String songName) {
++        name = songName;
++    }
++    public String getName() {
++        return name;
++    }
++    public void setArtist(String artistName) {
++        artist = artistName;
++    }
++    public String getArtist() {
++        return artist;
++    }
++    public void setAlbum(String albumName) {
++        album = albumName;
++    }
++    public String getAlbum() {
++        return album;
++    }
++    public void setYear(int year) {
++        int Year = year;
++    }
++    public String getYear() {
++        return year;
++    }
++
++    public String toString() {
++        return "Title: " + getName() + ", Artist: " + getArtist()
++                + ", Album: " + getAlbum() + ", Year of Release: " + getYear();
++    }
++
++
++    // check if the Album is exsits or not
++    public Album findAlbumName(String albumName) {
++
++        for (Album checkedAlbum : albumName) {
++            if (checkedAlbum.albumName().equals(Album))
++                return checkedAlbum;
++        }
++        return null;
++    }
++    public boolean addSong(String title, String albumName) {
++        if (findSong(title, albumName) == null) {
++            songs.add(new Song(title, albumName));
++            // System.out.println(genres + "song is added on the list");
++            return true;
++        } else {
++            // System.out.println("Song with albumName "+ title + " already exist in the
++            // list");
++            return false;
++        }
++    }
++}
+\ No newline at end of file
