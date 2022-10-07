@@ -1,36 +1,38 @@
 import java.util.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 public class Main {
+    Scanner userInput = new Scanner(System.in);
+    Scanner userInt = new Scanner(System.in);
     public static void main(String[] args) {
 
 
-    //testdata to test get
-    BasicInfo.add("David", "rock", 0, 2000);
-    BasicInfo.add("Steve", "EDM", 0, 1990);
-    Musician.add("George", "New-age", 1980);
-    Band band1 = new ("Jumping rocks", "EDM rap", 2005);
-    Album alb1 = new Album("songName", "artistName", "albumName", songs, 1980  );
+        //testdata to test get
+        BasicInfo basic1 = new BasicInfo("David", "rock", 0, 2000);
+        BasicInfo basic2 = new BasicInfo("Steve", "EDM", 0, 1990);
+        Musician musician1 = new Musician("George", "New-age", 1980);
+        Band band1 = new Band("Jumping rocks", "EDM rap", 2005, 2015);
+        Album alb1 = new Album("songName", "artistName", "albumName", 2005);
 
-    userString = in.next();
-    userInt = in.nextInt();
-    public void mainMenu {
-        System.out.println("\n".repeat(30)); //clear terminal
-        System.out.println("Please choose an option 1-9" + "\n 1. Show Bands and Musicians" +
-                "\n 2. Show Albums" + "\n 3. Add Musician" + "\n 4. Add Album" +
-                "\n 5. Remove Bands" + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
 
-        // 1-7 is for the basic functions required, display/add/delete. Ternary operator
-        int menuChoice = in.nextInt();
-        int userMenu = menuChoice == 1 ? showBand : menuChoice == 2 ? showAlbum : menuChoice == 3 ? addMusician :
-            menuChoice == 4 ? addAlbum : menuChoice == 5 ? removeBand : menuChoice == 6 ? removeMusician :
-                    menuChoice == 7 ? removeAlbum : "Bye";
     }
 
-    public void showBand {
+        public void mainMenu (){
+            System.out.println("\n".repeat(30));
+            System.out.println("Please choose an option 1-9" + "\n 1. Show Bands and Musicians" +
+                    "\n 2. Show Albums" + "\n 3. Add Musician" + "\n 4. Add Album" +
+                    "\n 5. Remove Bands" + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
+            //clear terminal
+            // 1-7 is for the basic functions required, display/add/delete. Ternary operator
+            int menuChoice = userInt.nextInt();
+            int userMenu = menuChoice == 1 ? showBand : menuChoice == 2 ? showAlbum : menuChoice == 3 ? addMusician :
+                    menuChoice == 4 ? addAlbum : menuChoice == 5 ? removeBand : menuChoice == 6 ? removeMusician :
+                            menuChoice == 7 ? removeAlbum : "Bye";
+        }
+
+
+    public showBand {
         for (BasicInfo dispBand : Band) {
             System.out.println(dispBand.getBand(name, info));
         }
@@ -39,9 +41,10 @@ public class Main {
             System.out.println(current)
         }
             System.out.println("Return to main menu (1)");
-        int userChoice = in.nextInt();
-        if (userChoice == 1) {
-        mainMenu;
+        Scanner userChoice = new Scanner(System.in);
+        int userChoice1 = userChoice.nextInt();
+        if (userChoice1 == 1) {
+        mainMenu();
         }
     }
 
@@ -50,10 +53,11 @@ public class Main {
             System.out.println(dispAlbum.getAlbum());
         }
         System.out.println("Return to main menu (1)");
-        int userChoice = in.nextInt();
-        if userChoice == 1 {
-                mainMenu;
-            }
+        Scanner userChoice = new Scanner(System.in);
+        int userChoice1 = userChoice.nextInt();
+        if (userChoice1 == 1) {
+        mainMenu();
+        }
     }
     // User has to input the whole info in the format of the Musician class
     public void addMusician {
@@ -95,5 +99,5 @@ public class Main {
             }
             int userRemoveAlbum = in.nextInt();
             Musician.remove((userRemoveAlbum) - 1);
-        }
+    }
 }
