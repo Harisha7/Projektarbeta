@@ -43,7 +43,7 @@ public class Main
     }
 
     public void showAlbum {
-        for (Album dispAlbum : Album) {
+        for (Album dispAlbum : songs) {
             System.out.println(dispAlbum.getAlbum());
         }
         System.out.println("Return to main menu (1)");
