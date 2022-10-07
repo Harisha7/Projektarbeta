@@ -1,17 +1,15 @@
 import java.util.*;
 
-public class Main
-        extends Basicinfo
-        extends Band
-        extends Musician
-        extends Album
-        {
+public class Main {
+    public static void main(String[] args) {
+
 
     //testdata to test get
     BasicInfo.add("David", "rock", 0, 2000);
     BasicInfo.add("Steve", "EDM", 0, 1990);
     Musician.add("George", "New-age", 1980);
     Band.add("Jumping rocks", "EDM rap", 2005);
+    Album alb1 = news Album("songName", "artistName", "albumName", songs, 1980  );
 
     userString = in.next();
     userInt = in.nextInt();
@@ -55,9 +53,14 @@ public class Main
     }
 
     public void addMusician {
-            String userTypeName = in.nextString(Musician);
-            Musician.add
+            String userTypeMusician = in.nextString();
+            System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played")
+            Musician.add(userTypeMusician);
         }
-
-    public
+// Add function to disallow empty character input
+    public void addAlbum {
+        String userTypeAlbum = in.next();
+        System.out.println("Add an Album n in this format: Song name, artist nname, album name, year of release NNNN")
+                Album.add(userTypeAlbum);
+        }
 }
