@@ -1,4 +1,8 @@
 import java.util.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +12,7 @@ public class Main {
     BasicInfo.add("David", "rock", 0, 2000);
     BasicInfo.add("Steve", "EDM", 0, 1990);
     Musician.add("George", "New-age", 1980);
-    Band.add("Jumping rocks", "EDM rap", 2005);
+    Band band1 = new ("Jumping rocks", "EDM rap", 2005);
     Album alb1 = new Album("songName", "artistName", "albumName", songs, 1980  );
 
     userString = in.next();
@@ -51,7 +55,7 @@ public class Main {
                 mainMenu;
             }
     }
-
+    // User has to input the whole info in the format of the Musician class
     public void addMusician {
             String userTypeMusician = in.next();
             System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played")

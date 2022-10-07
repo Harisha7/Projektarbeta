@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="Test upload main">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="added filewriter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Projektarbeta" />
       <method v="2">
@@ -108,7 +109,28 @@
       <option name="project" value="LOCAL" />
       <updated>1665137558517</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test upload main">
+      <created>1665139360309</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665139360309</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Menu options">
+      <created>1665139409898</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665139409898</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added filewriter">
+      <created>1665142044425</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665142044425</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +149,9 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Create BasicInfo.java class which contains the basic information of the band, it has constructor and getter setter method." />
     <MESSAGE value="Test upload main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test upload main" />
+    <MESSAGE value="Menu options" />
+    <MESSAGE value="added filewriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added filewriter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
