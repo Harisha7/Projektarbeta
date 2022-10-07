@@ -52,7 +52,7 @@ public class Musician {
         return soloAlbum;
     }
     
-    Public void setSoloAlbum(HashMap<Album,String> soloAlbum){
+    public void setSoloAlbum(HashMap<Album,String> soloAlbum){
         this.soloAlbum = soloAlbum;
     }
     
