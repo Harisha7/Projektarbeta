@@ -55,7 +55,7 @@ public class Main {
                 mainMenu;
             }
     }
-
+    // User has to input the whole info in the format of the Musician class
     public void addMusician {
             String userTypeMusician = in.next();
             System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played")
