@@ -14,6 +14,8 @@ public class Band extends BasicInfo {
         super(name, info, birthYear);
         this.endYear = endYear;
     }
+    ArrayList<String> currentBands= new ArrayList<String>();
+    return currentBands;
 
     public int getEndYear() {
         return endYear;
