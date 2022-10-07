@@ -84,6 +84,7 @@ public class Main {
             Musician.remove((userRemoveMusician) - 1);
         }
 
+        //Show list of Album first, then give user option to delete based on order in list
     public void removeAlbum {
             for (Album dispAlbum : songs) {
                 System.out.println(dispAlbum.getAlbum());
