@@ -4,6 +4,7 @@ public class Main
         extends Basicinfo
         extends Band
         extends Musician
+        extends Album
         {
 
     //testdata to test get
