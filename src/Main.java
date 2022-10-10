@@ -1,3 +1,5 @@
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+import java.nio.file.attribute.UserPrincipal;
 import java.util.*;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,19 +28,21 @@ public class Main {
             //clear terminal
             // 1-7 is for the basic functions required, display/add/delete. Ternary operator
             int menuChoice = userInt.nextInt();
-            int userMenu = menuChoice == 1 ? showBand : menuChoice == 2 ? showAlbum : menuChoice == 3 ? addMusician :
-                    menuChoice == 4 ? addAlbum : menuChoice == 5 ? removeBand : menuChoice == 6 ? removeMusician :
-                            menuChoice == 7 ? removeAlbum : "Bye";
+            int userMenu = menuChoice == 1 ? showBand() : menuChoice == 2 ? showAlbum() : menuChoice == 3 ? addMusician() :
+                    menuChoice == 4 ? addAlbum() : menuChoice == 5 ? removeBand() : menuChoice == 6 ? removeMusician() :
+                            menuChoice == 7 ? removeAlbum() : exitMenu();
         }
 
-
-    public showBand {
+    public int exitMenu () {
+        System.out.println("Bye");
+    }
+    public void showBand () {
         for (BasicInfo dispBand : Band) {
-            System.out.println(dispBand.getBand(name, info));
+            System.out.println(dispBand.get(name, info));
         }
         for (String dispMusician : Musician) {
             System.out.println(dispMusician.getMusician(name, info));
-            System.out.println(current)
+            System.out.println(current);
         }
             System.out.println("Return to main menu (1)");
         Scanner userChoice = new Scanner(System.in);
@@ -48,8 +52,8 @@ public class Main {
         }
     }
 
-    public void showAlbum {
-        for (Album dispAlbum : songs) {
+    public void showAlbum (){
+        for (Album dispAlbum : Album) {
             System.out.println(dispAlbum.getAlbum());
         }
         System.out.println("Return to main menu (1)");
@@ -60,44 +64,47 @@ public class Main {
         }
     }
     // User has to input the whole info in the format of the Musician class
-    public void addMusician {
-            String userTypeMusician = in.next();
-            System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played")
+    public void addMusician () {
+            System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played");
+            Scanner userChoice = new Scanner(System.in);
+            String userTypeMusician = userChoice.next();
             Musician.add(userTypeMusician);
         }
+
 // Add function to disallow empty character input
-    public void addAlbum {
-        String userTypeAlbum = in.next();
-        System.out.println("Add an Album in this format: Song name, artist name, album name, year of release NNNN")
-                Album.add(userTypeAlbum);
+    public void addAlbum () {
+        System.out.println("Add an Album in this format: Song name, artist name, album name, year of release NNNN");
+        Scanner userChoice = new Scanner(System.in);
+        String userTypeAlbum = userChoice.next();
+        Album.add(userTypeAlbum);
         }
 
         //Show list of band first, then give user option to delete based on order in list
-    public void removeBand {
+    public void removeBand () {
             for (BasicInfo dispBand : Band) {
                 System.out.println(dispBand.getBand(name, info));
             }
             System.out.println("Remove a band by typing the order of the band, top = 1");
-            int userRemoveBand = in.nextInt();
+            int userRemoveBand = userInt.nextInt();
             Band.remove((userRemoveBand) - 1);
         }
 
         //Show list of Musician first, then give user option to delete based on order in list
-    public void removeMusician {
+    public void removeMusician () {
             for (String dispMusician : Musician) {
                 System.out.println(dispMusician.getMusician(name, info));
-                System.out.println(current)
+                System.out.println(current);
             }
-            int userRemoveMusician = in.nextInt();
+            int userRemoveMusician = userInt.nextInt();
             Musician.remove((userRemoveMusician) - 1);
         }
 
         //Show list of Album first, then give user option to delete based on order in list
-    public void removeAlbum {
+    public void removeAlbum () {
             for (Album dispAlbum : songs) {
                 System.out.println(dispAlbum.getAlbum());
             }
-            int userRemoveAlbum = in.nextInt();
+            int userRemoveAlbum = userInt.nextInt();
             Musician.remove((userRemoveAlbum) - 1);
     }
 }
