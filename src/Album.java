@@ -1,13 +1,10 @@
 package src;
 import java.util.ArrayList;
 
-class Title {
-
-}
 public class Album {
-    public String songName; // songName or song title
-    public String artistName; // musician
-    public String albumName;
+    public String title; // songName or song title
+    public String artist; // musician
+    public String album;
     public String name;
     public int year;
     public ArrayList<Title> songs;
@@ -17,6 +14,7 @@ public class Album {
         this.title = title;
         this.name = name; // name means here musician
         this.album = albumName;
+        this.songs = songs;
         this.year = yearOfRelease;
         this.songs = new ArrayList<Title>();
 
@@ -46,7 +44,7 @@ public class Album {
         return album;
     }
 
-    public void setyearOfRelease(int year) {
+    public void setyearOfRelease(int yearOfRelease) {
         year = yearOfRelease;
     }
 
@@ -63,7 +61,7 @@ public class Album {
 
     public Title findSong(String title) {
 
-        for (Song checkedSong : songs) {
+        for (Title checkedSong : songs) {
             if (checkedSong.getTitle().equals(title))
                 return checkedSong;
         }
