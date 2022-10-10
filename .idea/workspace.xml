@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="adjusting Main, work in progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Band.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Musician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Musician.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -30,7 +30,7 @@ public class Main {
             int menuChoice = userInt.nextInt();
             int userMenu = menuChoice == 1 ? showBand() : menuChoice == 2 ? showAlbum() : menuChoice == 3 ? addMusician() :
                     menuChoice == 4 ? addAlbum() : menuChoice == 5 ? removeBand() : menuChoice == 6 ? removeMusician() :
-                            menuChoice == 7 ? removeAlbum(); : exitMenu();
+                            menuChoice == 7 ? removeAlbum() : exitMenu();
         }
 
     public int exitMenu () {
@@ -38,12 +38,12 @@ public class Main {
 
     }
     public void showBand () {
-        for (Band dispBand : Band) {
-            System.out.println(dispBand);
+        for (BasicInfo dispBand : Band) {
+            System.out.println(dispBand.getInfo());
         }
-        for (String dispMusician : Musician) {
-            System.out.println(dispMusician.getClass(name, info));
-            System.out.println(current);
+        for (BasicInfo dispMusician : Musician) {
+            System.out.println(dispMusician.getInfo());
+
         }
             System.out.println("Return to main menu (1)");
         Scanner userChoice = new Scanner(System.in);
@@ -81,32 +81,33 @@ public class Main {
         }
 
         //Show list of band first, then give user option to delete based on order in list
-    public void removeBand () {
-            for (BasicInfo dispBand : Band) {
-                System.out.println(dispBand.getBand(name, info));
+    public int removeBand () {
+            for (BasicInfo dispBand : bands) {
+                System.out.println(dispBand.getInfo());
             }
             System.out.println("Remove a band by typing the order of the band, top = 1");
             int userRemoveBand = userInt.nextInt();
             Band.remove((userRemoveBand) - 1);
-        }
+        return userRemoveBand;
+    }
 
         //Show list of Musician first, then give user option to delete based on order in list
-    public void removeMusician () {
-            for (String dispMusician : Musician) {
-                System.out.println(dispMusician.getMusician(name, info));
-                System.out.println(current);
+    public int removeMusician () {
+            for (BasicInfo dispMusician : Musician.musicianList) {
+                System.out.println(dispMusician.getInfo());
             }
             int userRemoveMusician = userInt.nextInt();
             Musician.remove((userRemoveMusician) - 1);
+        return userRemoveAlbum;
         }
 
         //Show list of Album first, then give user option to delete based on order in list
-    public void removeAlbum () {
+    public int removeAlbum () {
             for (Album dispAlbum : songs) {
                 System.out.println(dispAlbum.getAlbum());
             }
             int userRemoveAlbum = userInt.nextInt();
             Musician.remove((userRemoveAlbum) - 1);
-            return userRemoveAlbum();
+
     }
 }
