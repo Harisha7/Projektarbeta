@@ -14,7 +14,7 @@ public class Main {
         BasicInfo basic1 = new BasicInfo("David", "rock", 0, 2000);
         BasicInfo basic2 = new BasicInfo("Steve", "EDM", 0, 1990);
         Musician musician1 = new Musician("George", "New-age", 1980);
-        Band band1 = new Band("Jumping rocks", "EDM rap", 2005, 2015);
+        Band band1 = new Band("Jumping rocks", "Rock", 3, 2005, 2015);
         Album alb1 = new Album("songName", "artistName", "albumName", 2005);
 
 
@@ -30,18 +30,19 @@ public class Main {
             int menuChoice = userInt.nextInt();
             int userMenu = menuChoice == 1 ? showBand() : menuChoice == 2 ? showAlbum() : menuChoice == 3 ? addMusician() :
                     menuChoice == 4 ? addAlbum() : menuChoice == 5 ? removeBand() : menuChoice == 6 ? removeMusician() :
-                            menuChoice == 7 ? removeAlbum() : exitMenu();
+                            menuChoice == 7 ? removeAlbum(); : exitMenu();
         }
 
     public int exitMenu () {
         System.out.println("Bye");
+
     }
     public void showBand () {
-        for (BasicInfo dispBand : Band) {
-            System.out.println(dispBand.get(name, info));
+        for (Band dispBand : Band) {
+            System.out.println(dispBand);
         }
         for (String dispMusician : Musician) {
-            System.out.println(dispMusician.getMusician(name, info));
+            System.out.println(dispMusician.getClass(name, info));
             System.out.println(current);
         }
             System.out.println("Return to main menu (1)");
@@ -106,5 +107,6 @@ public class Main {
             }
             int userRemoveAlbum = userInt.nextInt();
             Musician.remove((userRemoveAlbum) - 1);
+            return userRemoveAlbum();
     }
 }
