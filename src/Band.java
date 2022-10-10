@@ -10,11 +10,11 @@ public class Band extends BasicInfo {
     ArrayList<String> infoAboutMembersQuit = new ArrayList<String>();
 
     public Band(String name, String info, int birthYear, int endYear) {
-        super(name, info, birthYear);
+        super(name, info, birthYear, endYear);
         this.endYear = endYear;
     }
     ArrayList<String> currentBands= new ArrayList<String>();
-    return currentBands;
+
 
     public int getEndYear() {
         return endYear;

@@ -9,28 +9,15 @@ public class Main {
 
 
     //testdata to test get
-    BasicInfo.add("David", "rock", 0, 2000);
-    BasicInfo.add("Steve", "EDM", 0, 1990);
+    BasicInfo basic1 = new BasicInfo("David", "rock", 0, 2000);
+    BasicInfo basic2 = new BasicInfo("Steve", "EDM", 0, 1990);
     Musician.add("George", "New-age", 1980);
     Band band1 = new ("Jumping rocks", "EDM rap", 2005);
     Album alb1 = new Album("songName", "artistName", "albumName", songs, 1980  );
 
-    userString = in.next();
-    userInt = in.nextInt();
-    public void mainMenu {
-        System.out.println("\n".repeat(30)); //clear terminal
-        System.out.println("Please choose an option 1-9" + "\n 1. Show Bands and Musicians" +
-                "\n 2. Show Albums" + "\n 3. Add Musician" + "\n 4. Add Album" +
-                "\n 5. Remove Bands" + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
-
-        // 1-7 is for the basic functions required, display/add/delete. Ternary operator
-        int menuChoice = in.nextInt();
-        int userMenu = menuChoice == 1 ? showBand : menuChoice == 2 ? showAlbum : menuChoice == 3 ? addMusician :
-            menuChoice == 4 ? addAlbum : menuChoice == 5 ? removeBand : menuChoice == 6 ? removeMusician :
-                    menuChoice == 7 ? removeAlbum : "Bye";
-    }
-
-        public void mainMenu (){
+    Scanner userString = new Scanner(System.in);
+    Scanner userInt = new Scanner(System.in);
+    public void mainMenu() {
             System.out.println("\n".repeat(30));
             System.out.println("Please choose an option 1-9" + "\n 1. Show Bands and Musicians" +
                     "\n 2. Show Albums" + "\n 3. Add Musician" + "\n 4. Add Album" +
