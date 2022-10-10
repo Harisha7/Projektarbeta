@@ -1,4 +1,3 @@
-package src;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,13 +8,11 @@ public class Band extends BasicInfo {
     HashMap<Musician, String> membersAndJoinYear = new HashMap<Musician, String>();
     ArrayList<Album> albums = new ArrayList<Album>();
     ArrayList<String> infoAboutMembersQuit = new ArrayList<String>();
-
-    public Band(String name, String info, int birthYear, int endYear) {
-        super(name, info, birthYear);
+    ArrayList<String> currentBands= new ArrayList<String>();
+    public Band(String name, String genres, int numberOfMembers, int year, int endYear) {
+        super(name, genres, numberOfMembers, year);
         this.endYear = endYear;
     }
-    ArrayList<String> currentBands= new ArrayList<String>();
-    return currentBands;
 
     public int getEndYear() {
         return endYear;
