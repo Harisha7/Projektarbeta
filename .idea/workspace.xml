@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="adjusting Main, work in progress">
+    <list default="true" id="85103994-559b-4a0d-81f5-fb6190d19837" name="Changes" comment="added filewriter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,36 +16,7 @@
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/Harisha7-patch-1" />
   </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/main" />
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -69,14 +39,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Main" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/Main" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Projektarbeta" />
       <method v="2">
@@ -163,28 +130,7 @@
       <option name="project" value="LOCAL" />
       <updated>1665142044425</updated>
     </task>
-    <task id="LOCAL-00011" summary="added filewriter">
-      <created>1665142636246</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1665142636246</updated>
-    </task>
-    <task id="LOCAL-00012" summary="adjusting Main, work in progress">
-      <created>1665159794812</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1665159794813</updated>
-    </task>
-    <task id="LOCAL-00013" summary="adjusting Main, work in progress">
-      <created>1665382719723</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1665382719723</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,8 +151,7 @@
     <MESSAGE value="Test upload main" />
     <MESSAGE value="Menu options" />
     <MESSAGE value="added filewriter" />
-    <MESSAGE value="adjusting Main, work in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjusting Main, work in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="added filewriter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
