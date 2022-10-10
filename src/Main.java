@@ -52,7 +52,7 @@ public class Main {
         mainMenu();
         }
     }
-
+// I removed the current
     public void showAlbum (){
         for (Album dispAlbum : Album) {
             System.out.println(dispAlbum.getAlbum());
