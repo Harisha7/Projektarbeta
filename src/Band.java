@@ -70,5 +70,8 @@ public class Band extends BasicInfo {
           membersAndJoinYear.remove(musician);
       }
     }
+    public List<Musician> getMusician(){
+        return membersAndJoinYear.keyset().stream().toList();
+    }
 }
 
