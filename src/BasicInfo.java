@@ -1,6 +1,6 @@
 public class BasicInfo {
     private String name;
-    private String genres;
+    private String genre;
 
     private int NumberOfMembers;
     private int year;
@@ -10,7 +10,7 @@ public class BasicInfo {
 
     public BasicInfo(String name, String genres, int numberOfMembers, int year) {
         this.name = name;
-        this.genres = genres;
+        this.genre = genres;
         this.NumberOfMembers = numberOfMembers;
         this.year = year;
     }
@@ -24,11 +24,11 @@ public class BasicInfo {
     }
 
     public String getGenres() {
-        return genres;
+        return genre;
     }
 
     public void setGenres(String genres) {
-        this.genres = genres;
+        this.genre = genres;
     }
 
     public int getNumberOfMembers() {
@@ -46,9 +46,15 @@ public class BasicInfo {
     public void setYear(int year) {
         year = year;
     }
+
+
+
     public String getInfo(){
-        return " ";
+        return name + "type of music" +genre + "this band started" +year +
+                "has"+ getNumberOfMembers()+"members";
     }
+
+
 
 
 }
