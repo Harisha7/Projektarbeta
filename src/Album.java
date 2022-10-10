@@ -1,5 +1,18 @@
 import java.util.ArrayList;
+class Title{
+    public String albumName;
 
+    public Title(String albumName, String title) {
+        this.albumName = albumName;
+        this.title = title;
+    }
+
+    public String title;
+    public String getTitle(){
+        return title;
+    }
+
+}
 public class Album {
     public String title; // songName or song title
     public String artist; // musician
@@ -9,14 +22,21 @@ public class Album {
     public ArrayList<Title> songs;
 
     public Album(String title, String name, String albumName, int yearOfRelease) {
-        super(title, name);
+        //super(title, name);
         this.title = title;
         this.name = name; // name means here musician
         this.album = albumName;
-        this.songs = songs;
         this.year = yearOfRelease;
         this.songs = new ArrayList<Title>();
 
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
     public void setTitle(String title) {
@@ -47,7 +67,7 @@ public class Album {
         year = yearOfRelease;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -68,8 +88,8 @@ public class Album {
     }
 
     public boolean addSong(String title, String albumName) {
-        if (findSong(title, albumName) == null) {
-            songs.add(new Song(title, albumName));
+        if (findSong(title) == null) {
+            songs.add(new Title(title, albumName));
             System.out.println("song is added on the list");
             return true;
         } else {
