@@ -46,5 +46,9 @@ public class BasicInfo {
     public void setYear(int year) {
         year = year;
     }
+    public String getInfo(){
+        return " ";
+    }
+
 
 }

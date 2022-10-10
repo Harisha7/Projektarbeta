@@ -2,16 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class Musician {
-
-    private String name;
+public class Musician extends BasicInfo {
     private String infoText;
-    private int yearOfBirth;
-    
 
-    
-    
-   public ArrayList<Band> currentBands = new ArrayList<>();
+    public ArrayList<Band> currentBands = new ArrayList<>();
     
     public ArrayList<Band> oldBands = new ArrayList<>();
     
@@ -20,27 +14,26 @@ public class Musician {
     public ArrayList<Musician> musicianList = new ArrayList<>();
     
     ArrayList<String> instruments = new ArrayList<>();
+
+    public Musician(String name, String genres, int numberOfMembers, int year, String infoText) {
+        super(name, genres, numberOfMembers, year);
+        this.infoText = infoText;
+
+    }
     
-    
-    public Musician(String name, String infoText, int yearOfBirth){
+    /*public Musician(String name, String infoText, int yearOfBirth){
         this.name = name;
         this.infoText = infoText;
         this.yearOfBirth = yearOfBirth;
-    }
+    }*/
 
-    public String getName(){
 
-        return name;
-    }
 
     public String getInfoText(){
 
         return infoText;
     }
-    public int getYearOfBirth(){
 
-        return yearOfBirth;
-    }
 
     public ArrayList<Band> getCurrentBands(){
 
@@ -97,12 +90,12 @@ public class Musician {
 
     public void showMusicianList() {
         for(Musician musician :musicianList){
-            System.out.println(musician.getName() + " " + musician.getYearOfBirth() );
+            System.out.println(musician.getName() + " " + musician.getYear());
         }
     }
 
     @Override
     public String toString() {
-        return "name" +  getName() + "infoText" + getInfoText() + "yearOfBirth" + getYearOfBirth() + "Instruments played" + getInstruments();
+        return "name" +  getName() + "infoText" + getInfoText() + "yearOfBirth" + getYear() + "Instruments played" + getInstruments();
     }
 }
