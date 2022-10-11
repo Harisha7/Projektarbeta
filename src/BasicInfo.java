@@ -10,7 +10,6 @@ public class BasicInfo {
     public BasicInfo(String name, String info, int numberOfMembers, int year) {
         this.name = name;
         this.info = info;
-        this.genre = genres;
         this.numberOfMembers = numberOfMembers;
         this.year = year;
     }
