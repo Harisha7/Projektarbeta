@@ -8,12 +8,13 @@ public class Band extends BasicInfo {
     HashMap<Musician, String> membersAndJoinYear = new HashMap<Musician, String>();
     ArrayList<Album> albums = new ArrayList<Album>();
     ArrayList<String> infoAboutMembersQuit = new ArrayList<String>();
+    ArrayList<String> currentBands= new ArrayList<String>();
 
     public Band(String name, String info, int birthYear, int endYear) {
         super(name, info, birthYear, endYear);
         this.endYear = endYear;
     }
-    ArrayList<String> currentBands= new ArrayList<String>();
+
 
 
     public int getEndYear() {
