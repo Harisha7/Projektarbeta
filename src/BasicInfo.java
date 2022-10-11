@@ -14,9 +14,7 @@ public class BasicInfo {
         this.name = name;
 
         this.genre = genres;
-        this.NumberOfMembers = numberOfMembers;
 
-        this.genres = genres;
         this.numberOfMembers = numberOfMembers;
 
         this.year = year;
