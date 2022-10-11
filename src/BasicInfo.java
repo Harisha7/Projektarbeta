@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class BasicInfo {
     private String name;
     private String genre;
