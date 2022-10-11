@@ -2,7 +2,7 @@ public class BasicInfo {
     private String name;
     private String genres;
 
-    private int NumberOfMembers;
+    private int numberOfMembers;
     private int year;
 
  
@@ -11,7 +11,7 @@ public class BasicInfo {
     public BasicInfo(String name, String genres, int numberOfMembers, int year) {
         this.name = name;
         this.genres = genres;
-        this.NumberOfMembers = numberOfMembers;
+        this.numberOfMembers = numberOfMembers;
         this.year = year;
     }
 
@@ -32,11 +32,11 @@ public class BasicInfo {
     }
 
     public int getNumberOfMembers() {
-        return NumberOfMembers;
+        return numberOfMembers;
     }
 
     public void setNumberOfMembers(int numberOfMembers) {
-        NumberOfMembers = numberOfMembers;
+        numberOfMembers = numberOfMembers;
     }
 
     public int getYear() {
