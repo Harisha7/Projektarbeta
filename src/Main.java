@@ -18,14 +18,14 @@ public class Main {
         do{
             userInput = menuChoice();
             switch (userInput){
-                case 1: //Show Bands & Musicians
+                case 1: //Show Musicians
                     showMusicians();
                     break;
                 case 2: //Show Albums
                     showAlbum();
                     break;
                 case 3:
-                    showBand();
+                    showBand(); //Show Bands
                     break;
                 case 4: //Add Musician
                     addMusician();
@@ -33,7 +33,7 @@ public class Main {
                 case 5: //Add Album
                     addAlbum();
                     break;
-                case 6:
+                case 6:  // Add Band
                     addBand();
                     break;
                 case 7: //Remove Band
@@ -157,7 +157,6 @@ public class Main {
         }
     }
 
-    //Show list of Musician first, then give user option to delete based on order in list
 
 
     //Show list of Album first, then give user option to delete based on order in list
