@@ -40,6 +40,8 @@ public class Main {
                     removeBand();
                     break;
                 case 8: //Remove Musician
+                    System.out.println("Musician List: ");
+                    showMusicians();
                     System.out.print("Enter Musician name to delete: ");
                     removeMusician(read.next());
                     break;
@@ -83,7 +85,7 @@ public class Main {
     }
 
     public static void addBand(){
-        System.out.println("Add a band in this format: Name, Info, Year of birth NNNN, end year");
+        System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
         read = new Scanner(System.in);
         String userTypeBand = read.nextLine();
         String[] userInput = userTypeBand.split(", ");
