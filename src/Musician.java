@@ -6,20 +6,19 @@ import java.util.Calendar;
 public class Musician extends BasicInfo {
     private String infoText;
 
-    public ArrayList<Band> currentBands = new ArrayList<>();
+    private ArrayList<Band> currentBands = new ArrayList<>();
     
-    public ArrayList<Band> oldBands = new ArrayList<>();
+    private ArrayList<Band> oldBands = new ArrayList<>();
     
-    HashMap<Album, String> soloAlbum = new HashMap<>();
+    private HashMap<Album, String> soloAlbum = new HashMap<>();
 
-    public ArrayList<Musician> musicianList = new ArrayList<>();
+//    public ArrayList<Musician> musicianList = new ArrayList<>();
     
-    ArrayList<String> instruments = new ArrayList<>();
+    private ArrayList<String> instruments = new ArrayList<>();
 
-    public Musician(String name, String genres, int numberOfMembers, int year, String infoText) {
-        super(name, genres, numberOfMembers, year);
+    public Musician(String name, String genres, int year, String infoText) {
+        super(name, genres, 0, year);
         this.infoText = infoText;
-
     }
     
     /*public Musician(String name, String infoText, int yearOfBirth){
@@ -81,27 +80,20 @@ public class Musician extends BasicInfo {
         this.instruments = instruments;
     }
 
-    public void addMusician(Musician musician){
-        musicianList.add(musician);
-    }
-
-    public void removeMusician(String name){
-        for(Musician musician: musicianList){
-            if(musician.getName() == name){
-            musicianList.remove(musician);
-            }
-        }
-        showMusicianList();
-    }
-
+/*
     public void showMusicianList() {
         for(Musician musician :musicianList){
             System.out.println(musician.getName() + " " + musician.getYear());
         }
     }
 
+    public void getMusicianInfo() {
+        System.out.println(getName() + "," + getAge() + "," + getInstruments());
+    }
+*/
+
     @Override
     public String toString() {
-        return "name" +  getName() + "infoText" + getInfoText() + "yearOfBirth" + getYear() + "Instruments played" + getInstruments() + "age" + getAge();
+        return "Name: " +  getName() + ", InfoText: " + getInfoText() + ", YearOfBirth: " + getYear() + ", Instruments played: " + getInstruments() + ", Age: " + getAge();
     }
 }

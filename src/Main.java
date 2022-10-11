@@ -9,39 +9,88 @@ public class Main {
     public static ArrayList<Album> albums = new ArrayList<>();
     public static ArrayList<Musician> musicians = new ArrayList<>();
 
-    public static Scanner userString = new Scanner(System.in);
-    public static Scanner userInt = new Scanner(System.in);
+    public static Scanner read = new Scanner(System.in);
+
     public static void main(String[] args) {
-        mainMenu();
+        int userInput;
+        boolean exitLoop = false;
 
-        //testdata to test get
-        BasicInfo basic1 = new BasicInfo("David", "rock", 0, 2000);
-        BasicInfo basic2 = new BasicInfo("Steve", "EDM", 0, 1990);
-        Musician musician = new Musician("George", " Rock", 3, 1695 , " New-age");
-        Band band1 = new Band ("Jumping rocks", "EDM rap", 2005, 2008);
-        Album alb1 = new Album("songName", "artistName", "albumName", 1980  );
+        do{
+            userInput = menuChoice();
+            switch (userInput){
+                case 1: //Show Bands & Musicians
+                    showMusicians();
+                    break;
+                case 2: //Show Albums
+                    break;
+                case 3: //Add Musician
+                    addMusician();
+                    break;
+                case 4: //Add Album
+                    break;
+                case 5: //Remove Band
+                    break;
+                case 6: //Remove Musician
+                    System.out.print("Enter Musician name to delete: ");
+                    removeMusician(read.next());
+                    break;
+                case 7: //Remove Album
+                    break;
+                case 8:
+                default:
+                    exitLoop = true;
+            }
 
+            if (exitLoop) {
+                break;
+            }
+        } while (true);
+
+        System.out.println("Bye!.. :)");
     }
 
-    public static void mainMenu() {
-        System.out.println("\n".repeat(30));
+    private static void showMusicians(){
+        for(Musician artist : musicians){
+            System.out.println(artist);
+        }
+    }
+    public static void addMusician(){
+        String artistName, genre, infoText;
+        int yob;
+
+        System.out.print("Enter Musician name: ");
+        artistName = read.next();
+        System.out.print("Enter Musician genre: ");
+        genre = read.next();
+        System.out.print("Enter Musician Year of Birth(YYYY): ");
+        yob = read.nextInt();
+        System.out.print("Enter Information about Musician : ");
+        infoText = read.next();
+//        System.out.println("Enter Musician Instruments list : ");
+//        instruments = read.next();
+        Musician musician = new Musician(artistName, genre, yob , infoText);
+        musicians.add(musician);
+    }
+
+    private static int menuChoice(){
+        System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-9" + "\n 1. Show Bands and Musicians" +
                 "\n 2. Show Albums" + "\n 3. Add Musician" + "\n 4. Add Album" +
                 "\n 5. Remove Bands" + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
-        //clear terminal
-        // 1-7 is for the basic functions required, display/add/delete. Ternary operator
-        int menuChoice = userInt.nextInt();
-        int userMenu = menuChoice == 1 ? showBand() : menuChoice == 2 ? showAlbum() : menuChoice == 3 ? addMusician() :
-                menuChoice == 4 ? addAlbum() : menuChoice == 5 ? removeBand() : menuChoice == 6 ? removeMusician() :
-                        menuChoice == 7 ? removeAlbum() : exitMenu();
-
+        return read.nextInt();
     }
 
-    public static int exitMenu() {
-        System.out.println("Bye");
-
-        return 0;
+    public static void removeMusician(String name) {
+        for (Musician artist : musicians){
+            if (artist.getName().matches(name)) {
+                musicians.remove(artist);
+                System.out.println("Deleted artist: " + artist.getName());
+                break;
+            }
+        }
     }
+
+    /*
     public static int showBand() {
         for (BasicInfo dispBand : bands) {
             System.out.println(dispBand.getInfo());
@@ -68,15 +117,6 @@ public class Main {
             mainMenu();
         }
         return userChoice;
-    }
-    // User has to input the whole info in the format of the Musician class
-    //here you need to add info about the musician.
-    public static int addMusician(){
-        String userTypeMusician = userInt.next();
-        System.out.println("Add a musician in this format: Name, Info, Year of birth NNNN, Instruments played");
-        Musician musician = new Musician("George", " Rock", 3, 1695 , " New-age");
-        musicians.add(musician);
-        return musicians.size();
     }
     // Add function to disallow empty character input
     public static int addAlbum (){
@@ -118,5 +158,5 @@ public class Main {
         return userRemoveAlbum;
 
     }
-
+  */
 }
