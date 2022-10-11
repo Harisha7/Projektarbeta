@@ -165,8 +165,19 @@ public class Main {
         for (Album dispAlbum : albums) {
             System.out.println(dispAlbum.getAlbum());
         }
-        int userRemoveAlbum = read.nextInt();
-        albums.remove((userRemoveAlbum) - 1);
+        System.out.println("Remove a album by typing the name of the album");
+        read = new Scanner(System.in);
+        String userRemoveAlbum = read.nextLine();
+        int albumToRemove = -1;
+        for (Album disAlbum : albums){
+            if (disAlbum.getName().equals(userRemoveAlbum)){
+                albumToRemove = albums.indexOf(disAlbum);
+            }
+        }
+        if (albumToRemove >= 0 ){
+            albums.remove(albumToRemove);
+        }
+
 
 
     }
