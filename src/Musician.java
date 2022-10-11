@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Calendar;
 
 
 public class Musician extends BasicInfo {
@@ -34,6 +35,11 @@ public class Musician extends BasicInfo {
         return infoText;
     }
 
+    public int getAge(){
+        Calendar date = Calendar.getInstance();
+        int  age = date.get(Calendar.YEAR) - this.getYear();
+        return age;
+    }
 
     public ArrayList<Band> getCurrentBands(){
 
