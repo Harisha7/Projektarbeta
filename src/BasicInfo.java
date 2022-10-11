@@ -2,21 +2,16 @@ import java.util.*;
 
 public class BasicInfo {
     private String name;
-    private String genre;
-
+    private String info;
     private int numberOfMembers;
     private int year;
 
- 
 
-
-    public BasicInfo(String name, String genres, int numberOfMembers, int year) {
+    public BasicInfo(String name, String info, int numberOfMembers, int year) {
         this.name = name;
-
+        this.info = info;
         this.genre = genres;
-        
         this.numberOfMembers = numberOfMembers;
-
         this.year = year;
     }
 
@@ -28,12 +23,8 @@ public class BasicInfo {
         this.name = name;
     }
 
-    public String getGenres() {
-        return genre;
-    }
-
-    public void setGenres(String genres) {
-        this.genre = genres;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public int getNumberOfMembers() {
@@ -41,7 +32,7 @@ public class BasicInfo {
     }
 
     public void setNumberOfMembers(int numberOfMembers) {
-        numberOfMembers = numberOfMembers;
+        this.numberOfMembers = numberOfMembers;
     }
 
     public int getYear() {
@@ -49,14 +40,12 @@ public class BasicInfo {
     }
 
     public void setYear(int year) {
-        year = year;
+        this.year = year;
     }
 
-
-
     public String getInfo(){
-        return name + "type of music" +genre + "this band started" +year +
-                "has"+ getNumberOfMembers()+"members";
+        return name  + "this band started" + year +
+                "has"+ getNumberOfMembers()+ "members";
     }
 
 
