@@ -10,6 +10,7 @@ public class BasicInfo {
     public BasicInfo(String name, String info, int numberOfMembers, int year) {
         this.name = name;
         this.info = info;
+        this.genre = genres;
         this.numberOfMembers = numberOfMembers;
         this.year = year;
     }
@@ -43,8 +44,8 @@ public class BasicInfo {
     }
 
     public String getInfo(){
-        return name  + "this band started" +year +
-                "has"+ getNumberOfMembers()+"members";
+        return name  + "this band started" + year +
+                "has"+ getNumberOfMembers()+ "members";
     }
 
 
