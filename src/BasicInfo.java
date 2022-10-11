@@ -2,7 +2,7 @@ import java.util.*;
 
 public class BasicInfo {
     private String name;
-    private String info;
+    private String info; // add info and delete genre
     private int numberOfMembers;
     private int year;
 
