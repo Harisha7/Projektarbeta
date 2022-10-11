@@ -1,10 +1,11 @@
-import java.util.*;
-
 public class BasicInfo {
     private String name;
     private String genres;
+
     private int numberOfMembers;
     private int year;
+
+ 
 
 
     public BasicInfo(String name, String genres, int numberOfMembers, int year) {
@@ -35,7 +36,7 @@ public class BasicInfo {
     }
 
     public void setNumberOfMembers(int numberOfMembers) {
-        this.numberOfMembers = numberOfMembers;
+        numberOfMembers = numberOfMembers;
     }
 
     public int getYear() {
@@ -43,15 +44,11 @@ public class BasicInfo {
     }
 
     public void setYear(int year) {
-        this.year = year;
+        year = year;
     }
-
     public String getInfo(){
-        return name  + " type of music "+ genres +" this band started" + year +
-                " has"+ getNumberOfMembers()+ " members";
+        return name + " " + genres + " " + numberOfMembers + " " + year;
     }
-
-
 
 
 }
