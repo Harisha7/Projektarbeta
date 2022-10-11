@@ -102,6 +102,6 @@ public class Musician extends BasicInfo {
 
     @Override
     public String toString() {
-        return "name" +  getName() + "infoText" + getInfoText() + "yearOfBirth" + getYear() + "Instruments played" + getInstruments();
+        return "name" +  getName() + "infoText" + getInfoText() + "yearOfBirth" + getYear() + "Instruments played" + getInstruments() + "age" + getAge();
     }
 }
