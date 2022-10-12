@@ -10,10 +10,10 @@ public class Musician extends BasicInfo {
     
     private ArrayList<Band> oldBands = new ArrayList<>();
     
-    private HashMap<Album, String> soloAlbum = new HashMap<>();
+    private ArrayList<Album> soloAlbum = new ArrayList<>();
 
 //    public ArrayList<Musician> musicianList = new ArrayList<>();
-    
+
     private ArrayList<String> instruments = new ArrayList<>();
 
     public Musician(String name, String genres, int year, String infoText) {
@@ -60,14 +60,14 @@ public class Musician extends BasicInfo {
         this.oldBands = oldBands;
     }
     
-    public HashMap<Album, String> getSoloAlbum(){
+    public ArrayList<Album> getSoloAlbum(){
 
         return soloAlbum;
     }
     
-    public void setSoloAlbum(HashMap<Album,String> soloAlbum){
+    public void setSoloAlbum(Album album){
 
-        this.soloAlbum = soloAlbum;
+        soloAlbum.add(album);
     }
     
     public ArrayList<String> getInstruments(){
