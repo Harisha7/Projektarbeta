@@ -18,14 +18,14 @@ public class Main {
         do{
             userInput = menuChoice();
             switch (userInput){
-                case 1: //Show Bands & Musicians
+                case 1: //Show Musicians
                     showMusicians();
                     break;
                 case 2: //Show Albums
                     showAlbum();
                     break;
                 case 3:
-                    showBand();
+                    showBand(); //Show Bands
                     break;
                 case 4: //Add Musician
                     addMusician();
@@ -33,13 +33,15 @@ public class Main {
                 case 5: //Add Album
                     addAlbum();
                     break;
-                case 6:
+                case 6:  // Add Band
                     addBand();
                     break;
                 case 7: //Remove Band
                     removeBand();
                     break;
                 case 8: //Remove Musician
+                    System.out.println("Musician List: ");
+                    showMusicians();
                     System.out.print("Enter Musician name to delete: ");
                     removeMusician(read.next());
                     break;
@@ -83,7 +85,7 @@ public class Main {
     }
 
     public static void addBand(){
-        System.out.println("Add a band in this format: Name, Info, Year of birth NNNN, end year");
+        System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
         read = new Scanner(System.in);
         String userTypeBand = read.nextLine();
         String[] userInput = userTypeBand.split(", ");
@@ -157,7 +159,6 @@ public class Main {
         }
     }
 
-    //Show list of Musician first, then give user option to delete based on order in list
 
 
     //Show list of Album first, then give user option to delete based on order in list
