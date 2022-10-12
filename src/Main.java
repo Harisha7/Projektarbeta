@@ -25,7 +25,7 @@ public class Main {
                     showAlbum();
                     break;
                 case 3:
-                    showBand(); //Show Bands
+                    showBandMenu(); //Show Bands
                     break;
                 case 4: //Add Musician
                     addMusician();
@@ -33,22 +33,17 @@ public class Main {
                 case 5: //Add Album
                     addAlbum();
                     break;
-                case 6:  // Add Band
-                    addBand();
-                    break;
-                case 7: //Remove Band
-                    removeBand();
-                    break;
-                case 8: //Remove Musician
+
+                case 6: //Remove Musician
                     System.out.println("Musician List: ");
                     showMusicians();
                     System.out.print("Enter Musician name to delete: ");
                     removeMusician(read.next());
                     break;
-                case 9: //Remove Album
+                case 7: //Remove Album
                     removeAlbum();
                     break;
-                case 10:
+
                 default:
                     exitLoop = true;
             }
@@ -59,6 +54,35 @@ public class Main {
         } while (true);
 
         System.out.println("Bye!.. :)");
+    }
+    public static void showBandMenu(){
+        int userInput;
+        boolean exitLoop = false;
+        do{
+            userInput = menuChoiceBand();
+            switch (userInput){
+                case 1:
+                    showBand(); //Show Bands
+                    break;
+                case 2:  // Add Band
+                    addBand();
+                    break;
+                case 3: //Remove Band
+                    removeBand();
+                    break;
+                default:
+                    exitLoop = true;
+            }
+            if (exitLoop) {
+                break;
+            }
+        } while (true);
+    }
+    private static int menuChoiceBand(){
+        System.out.println("\n".repeat(1));
+        System.out.println("Please choose an option 1-4" + "\n 1. Show Band" +
+                "\n 2. Add Band" + "\n 3. remove Band" + "\n 4. Quit");
+        return read.nextInt();
     }
 
     private static void showMusicians(){
@@ -106,9 +130,9 @@ public class Main {
 
     private static int menuChoice(){
         System.out.println("\n".repeat(1));
-        System.out.println("Please choose an option 1-10" + "\n 1. Show Musicians" +
-                "\n 2. Show Albums" + "\n 3. Show Band" + "\n 4. Add Musician" + "\n 5. Add Album" +
-                "\n 6. Add Band" + "\n 7. Remove Bands" + "\n 8. Remove Musician" + "\n 9. Remove Album" + "\n 10. Quit");
+        System.out.println("Please choose an option 1-8" + "\n 1. Show Musicians" +
+                "\n 2. Show Albums" + "\n 3. Show Band Menu" + "\n 4. Add Musician" + "\n 5. Add Album"
+                + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
         return read.nextInt();
     }
 
@@ -125,7 +149,7 @@ public class Main {
 
     public static void showBand() {
         for (Band dispBand : bands) {
-            System.out.println(dispBand.getInfo());
+            dispBand.showBandInfo();
         }
 
 
