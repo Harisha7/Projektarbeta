@@ -12,22 +12,12 @@ public class Musician extends BasicInfo {
     
     private ArrayList<Album> soloAlbum = new ArrayList<>();
 
-//    public ArrayList<Musician> musicianList = new ArrayList<>();
-
     private ArrayList<String> instruments = new ArrayList<>();
 
     public Musician(String name, String genres, int year, String infoText) {
         super(name, genres, 0, year);
         this.infoText = infoText;
     }
-    
-    /*public Musician(String name, String infoText, int yearOfBirth){
-        this.name = name;
-        this.infoText = infoText;
-        this.yearOfBirth = yearOfBirth;
-    }*/
-
-
 
     public String getInfoText(){
 
@@ -45,9 +35,9 @@ public class Musician extends BasicInfo {
         return currentBands;
      }
     
-    public void setCurrentBands(ArrayList<Band>currentBands){
+    public void setCurrentBands(Band band){
 
-        this.currentBands = currentBands;
+        this.currentBands.add(band);
     }
     
     public ArrayList<Band> getOldBands(){
@@ -55,12 +45,12 @@ public class Musician extends BasicInfo {
         return oldBands;
      }
     
-    public void setOldBands(ArrayList<Band>currentBands){
+    public void setOldBands(Band band){
 
-        this.oldBands = oldBands;
+        this.oldBands.add(band);
     }
     
-    public ArrayList<Album> getSoloAlbum(){
+    public ArrayList<Album> getSoloAlbums(){
 
         return soloAlbum;
     }
@@ -79,18 +69,6 @@ public class Musician extends BasicInfo {
 
         this.instruments = instruments;
     }
-
-/*
-    public void showMusicianList() {
-        for(Musician musician :musicianList){
-            System.out.println(musician.getName() + " " + musician.getYear());
-        }
-    }
-
-    public void getMusicianInfo() {
-        System.out.println(getName() + "," + getAge() + "," + getInstruments());
-    }
-*/
 
     @Override
     public String toString() {
