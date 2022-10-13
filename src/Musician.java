@@ -12,6 +12,7 @@ public class Musician {
 
     private String instrument;
 
+
     private ArrayList<Band> currentBands = new ArrayList<>();
     
     private ArrayList<Band> oldBands = new ArrayList<>();
@@ -21,6 +22,9 @@ public class Musician {
     private ArrayList<Album> soloAlbum = new ArrayList<>();
 
     private ArrayList<String> instruments = new ArrayList<>();
+    public void addInstrument(String instrument){
+        instruments.add(instrument);
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -61,7 +65,7 @@ public class Musician {
     public void setInstrument(String instrument) {
         this.instrument = instrument;
     }
-    public String getinstrument() {
+    public String getInstrument() {
         return instrument;
     }
 
@@ -154,8 +158,9 @@ public class Musician {
     }
 
     public void showInstruments(){
-        for (Musician musician : instrument){
-            System.out.println(musician.getInfo());
+
+        for (String instrument : instruments){
+            System.out.println(instrument);
         }
     }
 

@@ -23,18 +23,11 @@ public class Main {
                     showMusicianMenu();
                     break;
                 case 2: //Show Albums
-                    showAlbum();
+                    showAlbumMenu();
                     break;
                 case 3: //Show Bands
                     showBandMenu();
                     break;
-                case 4: //Add Album
-                    addAlbum();
-                    break;
-                case 5: //Remove Album
-                    removeAlbum();
-                    break;
-
                 default:
                     exitLoop = true;
             }
@@ -76,9 +69,9 @@ public class Main {
         return read.nextInt();
     }
 
-    private static void showMusicians(){
-        for(Musician artist : musicians){
-            System.out.println(artist);
+    public static void showMusicians() {
+        for (Musician dispMusician : musicians) {
+            dispMusician.showMusicianInfo();
         }
     }
 
@@ -89,7 +82,7 @@ public class Main {
             userInput = menuChoiceMusician();
             switch (userInput){
                 case 1:
-                    showMusicianMenu(); //Show musicians
+                    showMusicians(); //Show musicians
                     break;
                 case 2:  // Add Musician
                     addMusician();
@@ -114,27 +107,60 @@ public class Main {
                 "\n 2. Add Musician" + "\n 3. remove Musician" + "\n 4. Quit");
         return read.nextInt();
     }
+    public static void showAlbumMenu(){
+        int userInput;
+        boolean exitLoop = false;
+        do{
+            userInput = menuChoiceAlbum();
+            switch (userInput){
+                case 1:
+                    showAlbum();
+                    break;
+                case 2:
+                    addAlbum();
+                    break;
+                case 3:
+                    removeAlbum();
+                    break;
+                default:
+                    exitLoop = true;
+            }
+            if (exitLoop) {
+                break;
+            }
+        } while (true);
+    }
+    private static int menuChoiceAlbum(){
+        System.out.println("\n".repeat(1));
+        System.out.println("Please choose an option 1-4" + "\n 1. Show Album" +
+                "\n 2. Add Album" + "\n 3. remove Album" + "\n 4. Quit");
+        return read.nextInt();
+    }
+    public static void addInstrumentToMusician(Musician m){
+        read = new Scanner(System.in);
+        m.addInstrument(read.nextLine());
+        System.out.println("Which instrument do you want to add? ");
 
 
-
-
-
+    }
     public static void addBand(){
         System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
         read = new Scanner(System.in);
         String userTypeBand = read.nextLine();
         String[] userInput = userTypeBand.split(", ");
-        Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) , Integer.parseInt(userInput[3]));
+        Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) ,
+                Integer.parseInt(userInput[3]));
         bands.add(band);
 
     }
 
     public static void addMusician (){
-        System.out.println("Add musician in this format: name, info, instrument, birth year");
+        System.out.println("Add musician in this format: name, info, birth year,instrument ");
         read = new Scanner(System.in);
         String userTypeMusician = read.nextLine();
         String[] userInput = userTypeMusician.split(", ");
-        Musician musician = new Musician(userInput[0],userInput[1] , userInput[2] , Integer.parseInt(userInput[3]));
+        Musician musician = new Musician(userInput[0],userInput[1] , Integer.parseInt(userInput[2]),
+                userInput[3]);
         musicians.add(musician);
 
     }
@@ -144,7 +170,8 @@ public class Main {
         read = new Scanner(System.in);
         String userTypeAlbum = read.nextLine();
         String[] userInput = userTypeAlbum.split(", ");
-        Album album = new Album(userInput[0],userInput[1] , userInput[2] , Integer.parseInt(userInput[3]));
+        Album album = new Album(userInput[0],userInput[1] , userInput[2] ,
+                Integer.parseInt(userInput[3]));
         albums.add(album);
 
     }
@@ -156,9 +183,8 @@ public class Main {
 
     private static int menuChoice(){
         System.out.println("\n".repeat(1));
-        System.out.println("Please choose an option 1-8" + "\n 1. Show Musicians" +
-                "\n 2. Show Albums" + "\n 3. Show Band Menu" + "\n 4. Add Musician" + "\n 5. Add Album"
-                + "\n 6. Remove Musician" + "\n 7. Remove Album" + "\n 8. Quit");
+        System.out.println("Please choose an option 1-4" + "\n 1. Show Musician Menu" +
+                "\n 2. Show Album Menu" + "\n 3. Show Band Menu" + "\n 4. Quit");
         return read.nextInt();
     }
 
@@ -171,12 +197,6 @@ public class Main {
             }
         }
     }
-
-
-
-
-
-
     // I removed the current
     public static void showAlbum (){
         for (Album dispAlbum : albums) {
