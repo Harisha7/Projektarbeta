@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
 //import org.json.simple.JSONArray;
@@ -19,28 +20,18 @@ public class Main {
             userInput = menuChoice();
             switch (userInput){
                 case 1: //Show Musicians
-                    showMusicians();
+                    showMusicianMenu();
                     break;
                 case 2: //Show Albums
                     showAlbum();
                     break;
-                case 3:
-                    showBandMenu(); //Show Bands
+                case 3: //Show Bands
+                    showBandMenu();
                     break;
-                case 4: //Add Musician
-                    addMusician();
-                    break;
-                case 5: //Add Album
+                case 4: //Add Album
                     addAlbum();
                     break;
-
-                case 6: //Remove Musician
-                    System.out.println("Musician List: ");
-                    showMusicians();
-                    System.out.print("Enter Musician name to delete: ");
-                    removeMusician(read.next());
-                    break;
-                case 7: //Remove Album
+                case 5: //Remove Album
                     removeAlbum();
                     break;
 
@@ -90,23 +81,43 @@ public class Main {
             System.out.println(artist);
         }
     }
-    public static void addMusician(){
-        String artistName, genre, infoText;
-        int yob;
 
-        System.out.print("Enter Musician name: ");
-        artistName = read.next();
-        System.out.print("Enter Musician genre: ");
-        genre = read.next();
-        System.out.print("Enter Musician Year of Birth(YYYY): ");
-        yob = read.nextInt();
-        System.out.print("Enter Information about Musician : ");
-        infoText = read.next();
-//        System.out.println("Enter Musician Instruments list : ");
-//        instruments = read.next();
-        Musician musician = new Musician(artistName, genre, yob , infoText);
-        musicians.add(musician);
+    public static void showMusicianMenu(){
+        int userInput;
+        boolean exitLoop = false;
+        do{
+            userInput = menuChoiceMusician();
+            switch (userInput){
+                case 1:
+                    showMusicianMenu(); //Show musicians
+                    break;
+                case 2:  // Add Musician
+                    addMusician();
+                    break;
+                case 3://Remove Musician
+                    System.out.println("Enter the name of the artist you want to remove: ");
+                    read = new Scanner(System.in);
+                    String artistName = read.nextLine();
+                    removeMusician(artistName);
+                    break;
+                default:
+                    exitLoop = true;
+            }
+            if (exitLoop) {
+                break;
+            }
+        } while (true);
     }
+    private static int menuChoiceMusician(){
+        System.out.println("\n".repeat(1));
+        System.out.println("Please choose an option 1-4" + "\n 1. Show Musician" +
+                "\n 2. Add Musician" + "\n 3. remove Musician" + "\n 4. Quit");
+        return read.nextInt();
+    }
+
+
+
+
 
     public static void addBand(){
         System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
@@ -115,6 +126,16 @@ public class Main {
         String[] userInput = userTypeBand.split(", ");
         Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) , Integer.parseInt(userInput[3]));
         bands.add(band);
+
+    }
+
+    public static void addMusician (){
+        System.out.println("Add musician in this format: name, info, instrument, birth year");
+        read = new Scanner(System.in);
+        String userTypeMusician = read.nextLine();
+        String[] userInput = userTypeMusician.split(", ");
+        Musician musician = new Musician(userInput[0],userInput[1] , userInput[2] , Integer.parseInt(userInput[3]));
+        musicians.add(musician);
 
     }
     // Add function to disallow empty character input
@@ -137,10 +158,10 @@ public class Main {
     }
 
     public static void removeMusician(String name) {
-        for (Musician artist : musicians){
-            if (artist.getName().matches(name)) {
-                musicians.remove(artist);
-                System.out.println("Deleted artist: " + artist.getName());
+        for (Musician artistName : musicians){
+            if (artistName.getName().matches(name)) {
+                musicians.remove(artistName);
+                System.out.println("Deleted artist: " + artistName.getName());
                 break;
             }
         }
