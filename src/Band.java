@@ -32,21 +32,21 @@ public class Band {
             System.out.println("This band has retired "+ getEndYear());
         }
         System.out.println("The band info is: " + getBandInfo());
-        /* System.out.println("The active musicians are: " + showActiveMembers(););
+        System.out.println("The active musicians are: ");
         showActiveMembers();
-        System.out.println("The retired members are: " + showRetiredMembers(););
-        showRetiredMembers(); */
-        System.out.println("This band have released the following albums: " + getAlbums());
+        System.out.println("The retired members are: ");
+        showRetiredMembers();
+        System.out.println("This band have released the following albums: ");
         showAlbums();
     }
-        public void showActiveMembers(){
+    public void showActiveMembers(){
         for (Musician musician : activeMembers){
-            System.out.println(musician.getInfo());
+            System.out.println(musician.getName());
         }
     }
     public void showRetiredMembers(){
         for (Musician musician : retiredMembers){
-            System.out.println(musician);
+            System.out.println(musician.getName());
         }
     }
 
@@ -96,7 +96,7 @@ public class Band {
     }
     public void showAlbums(){
         for (Album album : albums){
-            System.out.println(album.toString());
+            System.out.println(album.getName());
         }
     }
     //return list of albums
@@ -148,5 +148,3 @@ public class Band {
 
     }
 }
-
-

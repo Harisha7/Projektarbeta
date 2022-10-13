@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.ArrayList;
 import java.io.FileWriter;
@@ -93,6 +94,12 @@ public class Main {
                     String artistName = read.nextLine();
                     removeMusician(artistName);
                     break;
+                case 4: //Add musician to band
+                    addMusicianToBand();
+                    break;
+                case 5: //Retire musician from band
+                    retireMusicianFromBand();
+                    break;
                 default:
                     exitLoop = true;
             }
@@ -104,7 +111,7 @@ public class Main {
     private static int menuChoiceMusician(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-4" + "\n 1. Show Musician" +
-                "\n 2. Add Musician" + "\n 3. remove Musician" + "\n 4. Quit");
+                "\n 2. Add Musician" + "\n 3. remove Musician" +"\n 4. Add Musician to Band" + "\n 5. Retire Musician from Band" + "\n 6. Quit");
         return read.nextInt();
     }
     public static void showAlbumMenu(){
@@ -120,6 +127,9 @@ public class Main {
                     addAlbum();
                     break;
                 case 3:
+                    addSoloAlbum();
+                    break;
+                case 4:
                     removeAlbum();
                     break;
                 default:
@@ -133,7 +143,7 @@ public class Main {
     private static int menuChoiceAlbum(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-4" + "\n 1. Show Album" +
-                "\n 2. Add Album" + "\n 3. remove Album" + "\n 4. Quit");
+                "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. remove Album" + "\n 5. Quit");
         return read.nextInt();
     }
     public static void addInstrumentToMusician(Musician m){
@@ -147,7 +157,7 @@ public class Main {
         System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
         read = new Scanner(System.in);
         String userTypeBand = read.nextLine();
-        String[] userInput = userTypeBand.split(", ");
+        String[] userInput = userTypeBand.split(",\\s*");
         Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) ,
                 Integer.parseInt(userInput[3]));
         bands.add(band);
@@ -158,7 +168,7 @@ public class Main {
         System.out.println("Add musician in this format: name, info, birth year,instrument ");
         read = new Scanner(System.in);
         String userTypeMusician = read.nextLine();
-        String[] userInput = userTypeMusician.split(", ");
+        String[] userInput = userTypeMusician.split(",\\s*");
         Musician musician = new Musician(userInput[0],userInput[1] , Integer.parseInt(userInput[2]),
                 userInput[3]);
         musicians.add(musician);
@@ -169,12 +179,45 @@ public class Main {
         System.out.println("Add a album in this format: Album name, Band name, Album info, year of release");
         read = new Scanner(System.in);
         String userTypeAlbum = read.nextLine();
-        String[] userInput = userTypeAlbum.split(", ");
-        Album album = new Album(userInput[0],userInput[1] , userInput[2] ,
-                Integer.parseInt(userInput[3]));
-        albums.add(album);
+        String[] userInput = userTypeAlbum.split(",\\s*");
 
+        boolean albumCreated = false;
+        for (Band band : bands){
+            if(band.getBandName().matches(userInput[1])){
+                Album album = new Album(userInput[0],userInput[1] , userInput[2] ,
+                        Integer.parseInt(userInput[3]));
+                band.addAlbumToBand(album);
+                albums.add(album);
+                albumCreated = true;
+                break;
+            }
+        }
+        if (!albumCreated){
+            System.out.println("Enter valid Band");
+        }
     }
+    public static void addSoloAlbum(){
+        System.out.println("Add a album in this format: Album name, Musician name, Album info, year of release");
+        read = new Scanner(System.in);
+        String userTypeAlbum = read.nextLine();
+        String[] userInput = userTypeAlbum.split(",\\s*");
+
+        boolean albumCreated = false;
+        for (Musician artist : musicians){
+            if(artist.getName().matches(userInput[1])){
+                Album album = new Album(userInput[0],userInput[1] , userInput[2] ,
+                        Integer.parseInt(userInput[3]));
+                artist.setSoloAlbum(album);
+                albums.add(album);
+                albumCreated = true;
+                break;
+            }
+        }
+        if (!albumCreated){
+            System.out.println("Enter valid Musician name");
+        }
+    }
+
     public static void showBand() {
         for (Band dispBand : bands) {
             dispBand.showBandInfo();
@@ -244,9 +287,62 @@ public class Main {
         if (albumToRemove >= 0 ){
             albums.remove(albumToRemove);
         }
-
-
-
     }
 
+    public static void addMusicianToBand(){
+        System.out.println("Enter Band and Musician to add in this format: Band name, Musician name");
+        read = new Scanner(System.in);
+        String userTypeBandMusician = read.nextLine();
+        String[] userInput = userTypeBandMusician.split(",\\s*");
+        boolean musicianFound = false;
+
+        for (Band band : bands) {
+            if (band.getBandName().matches(userInput[0])) { //finding matching band
+                for (Musician artist : musicians) {
+                    if (artist.getName().matches(userInput[1])) { //finding matching Musician
+                        band.addMusicianToBand(artist);
+                        artist.setCurrentBands(band);
+                        musicianFound = true;
+                        break;
+                    }
+                }
+                if (musicianFound) {
+                    break;
+                }
+            }
+        }
+        if (!musicianFound)
+        {
+            System.out.println("Enter valid Band & Musician names");
+        }
+    }
+
+    public static void retireMusicianFromBand(){
+        System.out.println("Enter Band name and Musician to retire from band in this format: Band name, Musician name");
+        read = new Scanner(System.in);
+        String userTypeBandMusician = read.nextLine();
+        String[] userInput = userTypeBandMusician.split(",\\s*");
+        boolean musicianFound = false;
+
+        for (Band band : bands) {
+            if (band.getBandName().matches(userInput[0])) { //finding matching band
+                for (Musician artist : musicians) {
+                    if (artist.getName().matches(userInput[1])) { //finding matching Musician
+                        band.removeMusicianFromBand(artist);
+                        artist.getCurrentBands().remove(band);
+                        artist.setOldBands(band);
+                        musicianFound = true;
+                        break;
+                    }
+                }
+                if (musicianFound) {
+                    break;
+                }
+            }
+        }
+        if (!musicianFound)
+        {
+            System.out.println("Enter valid Band & Musician names");
+        }
+    }
 }

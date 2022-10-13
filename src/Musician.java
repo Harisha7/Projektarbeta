@@ -56,7 +56,7 @@ public class Musician {
         return birthYear;
     }
 
-    private int Age(int birthYear){
+    private int getAge(){
         return  2022 - birthYear;
     }
 
@@ -70,8 +70,8 @@ public class Musician {
     }
 
 
-    public void setCurrentBands(ArrayList<Band> currentBands) {
-        this.currentBands = currentBands;
+    public void setCurrentBands(Band band) {
+        currentBands.add(band);
     }
 
 
@@ -85,48 +85,56 @@ public class Musician {
         setBirthYear(birthYear);
         setInstrument(instrument);
     }
-    public Musician(String name, String info, Integer birthYear, String Instrument, ArrayList<Band>currentBands,ArrayList<Band>pastBands,ArrayList<Album>albums) {
+    public Musician(String name, String info, Integer birthYear, String Instrument, ArrayList<Band> currBandsList,ArrayList<Band> pastBands,ArrayList<Album> albums) {
         setName(name);
         setInfo(info);
         setBirthYear(birthYear);
         setInstrument(instrument);
-        setCurrentBands(currentBands);
-        this.oldBands = pastBands;
-        this.albums=albums;
+        currentBands = currBandsList;
+        oldBands = pastBands;
+        albums=albums;
     }
-
-
 
     public void showMusicianInfo(){
         System.out.println("The Musician name is "+ getName());
         System.out.println("The Musician information is " + getInfo());
-        System.out.println("the Musicians age is " +getBirthYear());
+        System.out.println("the Musicians age is " + getAge() + " years old");
         if (currentBands.size() !=0 ){
             System.out.println("The current band musician is in:  ");
+            for (Band band : currentBands){
+                System.out.println(band.getBandName());
+            }
         }
         else{
-            System.out.println("The musician is not in a band currently");
+            System.out.println("Musician is not in any band currently");
         }
+
         if(oldBands.size() > 0){
-            System.out.println("The musicians old bands are :");
+            System.out.println("Musician old bands are:");
+            for (Band band : oldBands){
+                System.out.println(band.getBandName());
+            }
         }
         else{
             System.out.println("there are no old bands for this musician: ");
         }
 
-
+        if(soloAlbum.size() > 0){
+            System.out.println("Musician solo albums are:");
+            for (Album album : soloAlbum){
+                System.out.println(album.getName());
+            }
+        }
+        else {
+            System.out.println("There are no solo albums for this musician: ");
+        }
     }
 
     public ArrayList<Band> getCurrentBands(){
 
         return currentBands;
      }
-    
-    public void setCurrentBands(Band band){
 
-        this.currentBands.add(band);
-    }
-    
     public ArrayList<Band> getOldBands(){
 
         return oldBands;
@@ -134,7 +142,7 @@ public class Musician {
     
     public void setOldBands(Band band){
 
-        this.oldBands.add(band);
+        oldBands.add(band);
     }
     
     public ArrayList<Album> getSoloAlbums(){

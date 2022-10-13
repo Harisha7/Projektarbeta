@@ -1,4 +1,4 @@
-public class BasicInfo {
+/*public class BasicInfo {
     private String name;
     private String genres;
 
@@ -51,4 +51,4 @@ public class BasicInfo {
     }
 
 
-}
+}*/

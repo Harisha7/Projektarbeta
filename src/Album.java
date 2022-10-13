@@ -7,10 +7,9 @@ public class Album {
     public int year;
     public ArrayList<Title> songs;
 
-    public Album(String albumBand, String albumName, String albumInfo, int yearOfRelease) {
-        //super(title, name);
-        this.albumBand = albumBand; // name means here musician
+    public Album(String albumName, String albumBand, String albumInfo, int yearOfRelease) {
         this.albumName = albumName;
+        this.albumBand = albumBand; // name means here musician
         this.albumInfo = albumInfo;
         this.year = yearOfRelease;
         this.songs = new ArrayList<Title>();
@@ -72,8 +71,8 @@ public class Album {
     }
 
     public void showAlbumInfo(){
-        System.out.println("The Album name is " + getArtist());
-        System.out.println("The name of the Band that album is in " + getName());
+        System.out.println("The Album name is " + getName());
+        System.out.println("The name of the Band that album is in " + getArtist());
         System.out.println("The Albums information is " + getAlbum());
         System.out.println("The year of release is "+ getYear());
 
