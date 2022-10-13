@@ -71,10 +71,14 @@ public class Album {
         return year;
     }
 
-    public String getInfo() {
-        return "Album name: " + getArtist() + ", Band name: " + getName()
-                + ", Album info: " + getAlbum() + ", Year of Release: " + getYear();
+    public void showAlbumInfo(){
+        System.out.println("The Album name is " + getArtist());
+        System.out.println("The name of the Band that album is in " + getName());
+        System.out.println("The Albums information is " + getAlbum());
+        System.out.println("The year of release is "+ getYear());
+
     }
+
 
     // check if the song in any Album is exsits or not
 
