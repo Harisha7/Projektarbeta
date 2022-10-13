@@ -190,7 +190,7 @@ public class Main {
     //Show list of Album first, then give user option to delete based on order in list
     public  static void removeAlbum() {
         for (Album dispAlbum : albums) {
-            System.out.println(dispAlbum.getAlbum());
+            System.out.println(dispAlbum.getArtist());
         }
         System.out.println("Remove a album by typing the name of the album");
         read = new Scanner(System.in);
