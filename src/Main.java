@@ -209,14 +209,14 @@ public class Main {
     //Show list of band first, then give user option to delete based on order in list
    public static void removeBand() {
         for (Band dispBand : bands) {
-            System.out.println(dispBand.getInfo());
+            System.out.println(dispBand.getBandInfo());
         }
         System.out.println("Remove a band by typing the name of the band");
         read = new Scanner(System.in);
         String userRemoveBand = read.nextLine();
         int bandToRemove = -1;
         for (Band disBand : bands){
-            if (disBand.getName().equals(userRemoveBand)){
+            if (disBand.getBandName().equals(userRemoveBand)){
                 bandToRemove = bands.indexOf(disBand);
             }
         }
