@@ -119,13 +119,18 @@ public class Main {
     }
     // Add function to disallow empty character input
     public static void addAlbum (){
-        System.out.println("Add a album in this format: title, name, album name, year of release");
+        System.out.println("Add a album in this format: Album name, Band name, Album info, year of release");
         read = new Scanner(System.in);
         String userTypeAlbum = read.nextLine();
         String[] userInput = userTypeAlbum.split(", ");
         Album album = new Album(userInput[0],userInput[1] , userInput[2] , Integer.parseInt(userInput[3]));
         albums.add(album);
 
+    }
+    public static void showBand() {
+        for (Band dispBand : bands) {
+            dispBand.showBandInfo();
+        }
     }
 
     private static int menuChoice(){
@@ -147,17 +152,14 @@ public class Main {
     }
 
 
-    public static void showBand() {
-        for (Band dispBand : bands) {
-            dispBand.showBandInfo();
-        }
 
 
-    }
+
+
     // I removed the current
     public static void showAlbum (){
         for (Album dispAlbum : albums) {
-            System.out.println(dispAlbum.getAlbum());
+            System.out.println(dispAlbum.getInfo());
         }
 
     }
