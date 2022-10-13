@@ -4,48 +4,66 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;;
 
-public class Band extends BasicInfo {
+public class Band {
+    public String bandName;
+    public String bandInfo;
+    public int bandStartYear;
+    public int bandEndYear;
     private int endYear;
+    public String currentMembers;
+
    ArrayList<Musician> activeMembers = new ArrayList<>();
     ArrayList<Album> albums = new ArrayList<Album>();
     ArrayList<Musician> retiredMembers = new ArrayList<>();
-    HashMap<Musician, String> activeMembersHashmap = new HashMap<>();
-    HashMap<Musician, String> retiredMembersHashmap = new HashMap<>();
+   /* HashMap<Musician, String> activeMembersHashmap = new HashMap<>();
+    HashMap<Musician, String> retiredMembersHashmap = new HashMap<>(); */
 
 
-    public Band(String name, String info, int birthYear, int endYear) {
-        super(name, info, birthYear, endYear);
-        this.endYear = endYear;
+    public Band(String bandName, String bandInfo, int bandStartYear, int bandEndYear) {
+        this.bandName = bandName;
+        this.bandInfo = bandInfo;
+        this.bandStartYear = bandStartYear;
+        this.bandEndYear = bandEndYear;
     }
     public void showBandInfo(){
-        System.out.println("This band name is "+ getName());
+        System.out.println("This band name is "+ getBandName());
         System.out.println("This band has started " + getYear());
         if (getEndYear() !=0 ){
             System.out.println("This band has retired "+ getEndYear());
-
         }
-        System.out.println("The band info is: "+ getInfo());
-        System.out.println("The active musicians are: ");
+        System.out.println("The band info is: " + getBandInfo());
+        /* System.out.println("The active musicians are: " + showActiveMembers(););
         showActiveMembers();
-        System.out.println("The retired members are: ");
-        showRetiredMembers();
-        System.out.println("This band has those albums: ");
+        System.out.println("The retired members are: " + showRetiredMembers(););
+        showRetiredMembers(); */
+        System.out.println("This band have released the following albums: " + getAlbums());
         showAlbums();
-
     }
-
-    public void showActiveMembers(){
+        public void showActiveMembers(){
         for (Musician musician : activeMembers){
             System.out.println(musician.getInfo());
         }
     }
     public void showRetiredMembers(){
         for (Musician musician : retiredMembers){
-            System.out.println(musician.getInfo());
+            System.out.println(musician);
         }
     }
 
-    public HashMap<Musician, String> getActiveMembersHashmap() {
+    public String getBandName() {
+        return bandName;
+    }
+    public int getYear() {
+        return bandStartYear;
+    }
+
+    public String getBandInfo(){
+        return bandInfo;
+    }
+
+
+
+  /*  public HashMap<Musician, String> getActiveMembersHashmap() {
         return activeMembersHashmap;
     }
 
@@ -59,7 +77,7 @@ public class Band extends BasicInfo {
 
     public void setRetiredMembersHashmap(HashMap<Musician, String> retiredMembersHashmap) {
         this.retiredMembersHashmap = retiredMembersHashmap;
-    }
+    } */
 
     public int getEndYear() {
         return endYear;
