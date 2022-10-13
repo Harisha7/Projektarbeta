@@ -52,7 +52,7 @@ public class Main {
                     addBand();
                     break;
                 case 3: //Remove Band
-                    removeBand();
+                    //removeBand();
                     break;
                 default:
                     exitLoop = true;
@@ -198,17 +198,16 @@ public class Main {
         }
     }
     // I removed the current
-    public static void showAlbum (){
+    public static void showAlbum() {
         for (Album dispAlbum : albums) {
-            System.out.println(dispAlbum.getInfo());
+            dispAlbum.showAlbumInfo();
         }
-
     }
     // Add function to disallow empty character input
 
 
     //Show list of band first, then give user option to delete based on order in list
-    public static void removeBand() {
+   public static void removeBand() {
         for (Band dispBand : bands) {
             System.out.println(dispBand.getInfo());
         }
