@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 //import org.json.simple.JSONArray;
 //import org.json.simple.JSONObject;
 
@@ -12,6 +13,13 @@ public class Main {
     public static ArrayList<Musician> musicians = new ArrayList<>();
 
     public static Scanner read = new Scanner(System.in);
+
+
+    @JsonAdapter(ItemListAdapter.class)
+    public static List<Band> bandList = new ArrayList<>();
+
+
+
 
     public static void main(String[] args) {
         int userInput;
@@ -39,6 +47,29 @@ public class Main {
         } while (true);
 
         System.out.println("Bye!.. :)");
+
+      //json
+        if (!FileHandler.fileExists("data.json")) {
+            ItemStore.save("data.json");
+            ItemStore.log();
+        }
+        else loadData();
+    }
+    //json
+    private static void loadData(){
+        // Read all data to the store
+        ItemStore.load("data.json");
+        // Log the whole store
+        //ItemStore.log();
+    }
+    //json
+    private static void saveData(){
+        ItemStore.save("data.json");
+        //ItemStore.log();
+    }
+    //json
+    public static void getSaveData(){
+        saveData();
     }
     public static void showBandMenu(){
         int userInput;
