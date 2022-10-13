@@ -1,42 +1,42 @@
-import java.util.ArrayList;
-class Title{
-    public String albumName;
+import java.util.*;
 
-    public Title(String albumName, String title) {
-        this.albumName = albumName;
-        this.title = title;
-    }
-
-    public String title;
-    public String getTitle(){
-        return title;
-    }
-
-}
 public class Album {
-    public String title; // songName or song title
-    public String artist; // musician
-    public String album;
-    public String name;
+    public String albumBand;
+    public String albumName;
+    public String albumInfo;
     public int year;
     public ArrayList<Title> songs;
 
-    public Album(String title, String name, String albumName, int yearOfRelease) {
+    public Album(String albumBand, String albumName, String albumInfo, int yearOfRelease) {
         //super(title, name);
-        this.title = title;
-        this.name = name; // name means here musician
-        this.album = albumName;
+        this.albumBand = albumBand; // name means here musician
+        this.albumName = albumName;
+        this.albumInfo = albumInfo;
         this.year = yearOfRelease;
         this.songs = new ArrayList<Title>();
 
     }
+    class Title{
+        public String albumName;
+
+        public Title(String albumName, String title) {
+            this.albumName = albumName;
+            this.title = title;
+        }
+
+        public String title;
+        public String getTitle(){
+            return title;
+        }
+
+    }
 
     public String getArtist() {
-        return artist;
+        return albumBand;
     }
 
     public void setArtist(String artist) {
-        this.artist = artist;
+        this.albumBand = artist;
     }
 
     public void setTitle(String title) {
@@ -44,7 +44,7 @@ public class Album {
     }
 
     public String getTitle() {
-        return title;
+        return albumName;
     }
 
     public void setName(String name) {
@@ -52,15 +52,15 @@ public class Album {
     }
 
     public String getName() {
-        return name;
+        return albumName;
     }
 
     public void setAlbum(String albumName) {
-        album = albumName;
+        albumInfo = albumName;
     }
 
     public String getAlbum() {
-        return album;
+        return albumInfo;
     }
 
     public void setyearOfRelease(int yearOfRelease) {
@@ -71,9 +71,9 @@ public class Album {
         return year;
     }
 
-    public String toString() {
-        return "Title: " + getName() + ", Artist: " + getArtist()
-                + ", Album: " + getAlbum() + ", Year of Release: " + getYear();
+    public String getInfo() {
+        return "Album name: " + getArtist() + ", Band name: " + getName()
+                + ", Album info: " + getAlbum() + ", Year of Release: " + getYear();
     }
 
     // check if the song in any Album is exsits or not
