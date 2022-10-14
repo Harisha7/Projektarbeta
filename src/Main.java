@@ -144,7 +144,7 @@ public class Main {
     }
     private static int menuChoiceMusician(){
         System.out.println("\n".repeat(1));
-        System.out.println("Please choose an option 1-4" + "\n 1. Show Musician" +
+        System.out.println("Please choose an option 1-6" + "\n 1. Show Musician" +
                 "\n 2. Add Musician" + "\n 3. remove Musician" +"\n 4. Add Musician to Band" + "\n 5. Retire Musician from Band" + "\n 6. Quit");
         return read.nextInt();
     }
@@ -177,7 +177,7 @@ public class Main {
     private static int menuChoiceAlbum(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-4" + "\n 1. Show Album" +
-                "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. remove Album" + "\n 5. Quit");
+                "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. remove Album" + "\n 5. Return to the main menu");
         return read.nextInt();
     }
     public static void addInstrumentToMusician(Musician m){
@@ -288,7 +288,7 @@ public class Main {
     private static int menuChoice(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-4" + "\n 1. Show Musician Menu" +
-                "\n 2. Show Album Menu" + "\n 3. Show Band Menu" + "\n 4. Quit");
+                "\n 2. Show Album Menu" + "\n 3. Show Band Menu" + "\n 4. Return to the main menu");
         return read.nextInt();
     }
 
