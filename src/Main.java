@@ -22,6 +22,12 @@ public class Main {
     public static void main(String[] args) {
         int userInput;
         boolean exitLoop = false;
+        if (!FileHandler.fileExists("data.json")) {
+            ItemStore.save("data.json");
+            ItemStore.log();
+            System.out.println("file created");
+        }
+        else loadData();
 
         do{
             userInput = menuChoice();
@@ -47,22 +53,17 @@ public class Main {
         System.out.println("Bye!.. :)");
 
       //json
-        if (!FileHandler.fileExists("data.json")) {
-            ItemStore.save("data.json");
-            ItemStore.log();
-        }
-        else loadData();
+
     }
     //json
     private static void loadData(){
         // Read all data to the store
         ItemStore.load("data.json");
         // Log the whole store
-        ItemStore.log();
+        //ItemStore.log();
+        System.out.println("data loaded");
         //print previous data
-        System.out.println(ItemStore.lists.bands.get(0).bandInfo);
-        System.out.println(ItemStore.lists.musicians.get(0));
-        System.out.println(ItemStore.lists.albums.get(0));
+
     }
     //json
     private static void saveData(){
