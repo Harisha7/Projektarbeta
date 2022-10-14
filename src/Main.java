@@ -53,7 +53,7 @@ public class Main {
         System.out.println("Bye!.. :)");
 
       //json
-
+      saveData();
     }
     //json
     private static void loadData(){
