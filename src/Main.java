@@ -225,6 +225,15 @@ public class Main {
         String userTypeAlbum = read.nextLine();
         String[] userInput = userTypeAlbum.split(",\\s*");
 
+        try {
+            Musician musician = new Musician(userInput[0], userInput[1], Integer.parseInt(userInput[2]),
+                    userInput[3]);
+            musicians.add(musician);
+        }
+        catch(Exception e){
+            System.out.println("Bad input");
+        }
+
         boolean albumCreated = false;
         for (Band band : bands){
             if(band.getBandName().matches(userInput[1])){
