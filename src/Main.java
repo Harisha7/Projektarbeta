@@ -1,13 +1,8 @@
 import com.google.gson.annotations.JsonAdapter;
 import java.util.*;
 import java.util.ArrayList;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
+
 
 public class Main {
     public static ArrayList<Band> bands = new ArrayList<>();
@@ -87,7 +82,7 @@ public class Main {
                     addBand();
                     break;
                 case 3: //Remove Band
-                    //removeBand();
+                    removeBand();
                     break;
                 default:
                     exitLoop = true;
@@ -180,13 +175,7 @@ public class Main {
                 "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. Remove Album" + "\n 5. Return to the main menu");
         return read.nextInt();
     }
-    public static void addInstrumentToMusician(Musician m){
-        read = new Scanner(System.in);
-        m.addInstrument(read.nextLine());
-        System.out.println("Which instrument do you want to add? ");
-
-
-    }
+    
     public static void addBand(){
         System.out.println("Add a band in this format: Name, Info, Year of band formed YYYY, disbanded year");
         read = new Scanner(System.in);
@@ -301,16 +290,13 @@ public class Main {
             }
         }
     }
-    // I removed the current
+
     public static void showAlbum() {
         for (Album dispAlbum : albums) {
             dispAlbum.showAlbumInfo();
         }
     }
-    // Add function to disallow empty character input
 
-
-    //Show list of band first, then give user option to delete based on order in list
    public static void removeBand() {
         for (Band dispBand : bands) {
             System.out.println(dispBand.getBandInfo());
