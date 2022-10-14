@@ -1,7 +1,5 @@
 import com.google.gson.annotations.JsonAdapter;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class Band extends Item {
     public String bandName;
@@ -16,9 +14,6 @@ public class Band extends Item {
     ArrayList<Album> albums = new ArrayList<Album>();
     @JsonAdapter(ItemListAdapter.class)
     ArrayList<Musician> retiredMembers = new ArrayList<>();
-   /* HashMap<Musician, String> activeMembersHashmap = new HashMap<>();
-    HashMap<Musician, String> retiredMembersHashmap = new HashMap<>(); */
-
 
     public Band(String bandName, String bandInfo, int bandStartYear, int bandEndYear) {
         this.bandName = bandName;
@@ -67,38 +62,8 @@ public class Band extends Item {
         return bandInfo;
     }
 
-
-
-  /*  public HashMap<Musician, String> getActiveMembersHashmap() {
-        return activeMembersHashmap;
-    }
-
-    public void setActiveMembersHashmap(HashMap<Musician, String> activeMembersHashmap) {
-        this.activeMembersHashmap = activeMembersHashmap;
-    }
-
-    public HashMap<Musician, String> getRetiredMembersHashmap() {
-        return retiredMembersHashmap;
-    }
-
-    public void setRetiredMembersHashmap(HashMap<Musician, String> retiredMembersHashmap) {
-        this.retiredMembersHashmap = retiredMembersHashmap;
-    } */
-
     public int getEndYear() {
         return endYear;
-    }
-
-    public void setEndYear(int endYear) {
-        this.endYear = endYear;
-    }
-
-    public ArrayList<Musician> getActiveMembers() {
-        return activeMembers;
-    }
-
-    public void setActiveMembers(ArrayList<Musician> activeMembers) {
-        this.activeMembers = activeMembers;
     }
 
     public void showAlbums() {
@@ -107,35 +72,9 @@ public class Band extends Item {
         }
     }
 
-    //return list of albums
-    public ArrayList<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(ArrayList<Album> albums) {
-        this.albums = albums;
-    }
-
-    public ArrayList<Musician> getRetiredMembers() {
-        return retiredMembers;
-    }
-
-    public void setRetiredMembers(ArrayList<Musician> retiredMembers) {
-        this.retiredMembers = retiredMembers;
-    }
-
     public void addAlbumToBand(Album album) {
         if (!albums.contains(album)) {
             albums.add(album);
-        }
-    }
-
-    public void removeAlbumFromBand(Album album) {
-        for (Iterator<Album> it = albums.iterator(); it.hasNext(); ) {
-            Album item = it.next();
-            if (item == album) {
-                it.remove();
-            }
         }
     }
 
@@ -150,16 +89,6 @@ public class Band extends Item {
             activeMembers.remove(musician);
             retiredMembers.add(musician);
         }
-    }
-
-    public List<Musician> getActiveMusicians() {
-        return activeMembers;
-
-    }
-
-    public List<Musician> getRetiredMusicians() {
-        return retiredMembers;
-
     }
 
 }
