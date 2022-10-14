@@ -177,7 +177,7 @@ public class Main {
     private static int menuChoiceAlbum(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-5" + "\n 1. Show Album" +
-                "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. remove Album" + "\n 5. Return to the main menu");
+                "\n 2. Add Album" + "\n 3. Add Solo Album" + "\n 4. Remove Album" + "\n 5. Return to the main menu");
         return read.nextInt();
     }
     public static void addInstrumentToMusician(Musician m){
