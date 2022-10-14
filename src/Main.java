@@ -288,7 +288,7 @@ public class Main {
     private static int menuChoice(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-4" + "\n 1. Show Musician Menu" +
-                "\n 2. Show Album Menu" + "\n 3. Show Band Menu" + "\n 4. Return to the main menu");
+                "\n 2. Show Album Menu" + "\n 3. Show Band Menu" + "\n 4. Quit");
         return read.nextInt();
     }
 
