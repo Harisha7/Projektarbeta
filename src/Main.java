@@ -145,7 +145,7 @@ public class Main {
     private static int menuChoiceMusician(){
         System.out.println("\n".repeat(1));
         System.out.println("Please choose an option 1-6" + "\n 1. Show Musician" +
-                "\n 2. Add Musician" + "\n 3. remove Musician" +"\n 4. Add Musician to Band" + "\n 5. Retire Musician from Band" + "\n 6. Quit");
+                "\n 2. Add Musician" + "\n 3. remove Musician" +"\n 4. Add Musician to Band" + "\n 5. Retire Musician from Band" + "\n 6. Return to the main menu");
         return read.nextInt();
     }
     public static void showAlbumMenu(){
