@@ -234,6 +234,7 @@ public class Main {
             System.out.println("Bad input");
         }
 
+
         boolean albumCreated = false;
         for (Band band : bands){
             if(band.getBandName().matches(userInput[1])){
