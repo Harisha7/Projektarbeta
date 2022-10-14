@@ -21,7 +21,7 @@ public class ItemStore {
             "Musician", "albums", "Album",
             "Musician", "soloAlbum", "Album",
             "Musician", "instruments", "String",
-            "Album", "album", "album",
+            "Album", "album", "Title",
     };
 
     public static ArrayList getList(String className){

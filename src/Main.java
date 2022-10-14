@@ -60,14 +60,14 @@ public class Main {
         // Log the whole store
         ItemStore.log();
         //print previous data
+        System.out.println(ItemStore.lists.bands.get(0).bandInfo);
         System.out.println(ItemStore.lists.musicians.get(0));
-        System.out.println(ItemStore.lists.albums.get(0).songs);
-        System.out.println(ItemStore.lists.bands.get(0).activeMembers);
+        System.out.println(ItemStore.lists.albums.get(0));
     }
     //json
     private static void saveData(){
         ItemStore.save("data.json");
-        //ItemStore.log();
+        ItemStore.log();
     }
     //json
     public static void getSaveData(){
