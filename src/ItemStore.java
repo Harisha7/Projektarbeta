@@ -13,11 +13,15 @@ public class ItemStore {
 
     public static String[] fieldsToReviveAfterLoad  = {
             // className, fieldName, datatype of field
-         "Band", "band","band",
-            "Musician", "musician", "Musician",
+            "Band", "activeMembers","Musician",
+            "Band", "albums", "Album",
+            "Band", "retiredMembers", "Musician",
+            "Musician", "currentBands", "Band",
+            "Musician", "oldBands", "Band",
+            "Musician", "albums", "Album",
+            "Musician", "soloAlbum", "Album",
+            "Musician", "instruments", "String",
             "Album", "album", "album",
-
-
     };
 
     public static ArrayList getList(String className){
@@ -38,11 +42,6 @@ public class ItemStore {
 
             default -> null;
         };
-
-
-
-
-
     }
 
 
@@ -54,7 +53,6 @@ public class ItemStore {
        }
        return null;
     }
-
 
 
     public Musician findMusician(String musicianName) {

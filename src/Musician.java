@@ -1,3 +1,4 @@
+import com.google.gson.annotations.JsonAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Calendar;
@@ -13,14 +14,19 @@ public class Musician extends Item {
     private String instrument;
 
 
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<Band> currentBands = new ArrayList<>();
-    
+
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<Band> oldBands = new ArrayList<>();
 
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<Album> albums = new ArrayList<>();
-    
+
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<Album> soloAlbum = new ArrayList<>();
 
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<String> instruments = new ArrayList<>();
     public void addInstrument(String instrument){
         instruments.add(instrument);
@@ -84,6 +90,7 @@ public class Musician extends Item {
         setInfo(info);
         setBirthYear(birthYear);
         setInstrument(instrument);
+        ItemStore.add(this);
     }
     public Musician(String name, String info, Integer birthYear, String Instrument, ArrayList<Band> currBandsList,ArrayList<Band> pastBands,ArrayList<Album> albums) {
         setName(name);
@@ -93,6 +100,7 @@ public class Musician extends Item {
         currentBands = currBandsList;
         oldBands = pastBands;
         albums=albums;
+        ItemStore.add(this);
     }
 
     public void showMusicianInfo(){

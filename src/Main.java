@@ -1,13 +1,13 @@
 import com.google.gson.annotations.JsonAdapter;
-
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 public class Main {
     public static ArrayList<Band> bands = new ArrayList<>();
@@ -58,7 +58,11 @@ public class Main {
         // Read all data to the store
         ItemStore.load("data.json");
         // Log the whole store
-        //ItemStore.log();
+        ItemStore.log();
+        //print previous data
+        System.out.println(ItemStore.lists.musicians.get(0));
+        System.out.println(ItemStore.lists.albums.get(0).songs);
+        System.out.println(ItemStore.lists.bands.get(0).activeMembers);
     }
     //json
     private static void saveData(){
