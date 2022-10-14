@@ -226,9 +226,8 @@ public class Main {
         String[] userInput = userTypeAlbum.split(",\\s*");
 
         try {
-            Musician musician = new Musician(userInput[0], userInput[1], Integer.parseInt(userInput[2]),
-                    userInput[3]);
-            musicians.add(musician);
+            Album album = new Album(userInput[0], userInput[1], userInput[2], Integer.parseInt(userInput[3]));
+            albums.add(album);
         }
         catch(Exception e){
             System.out.println("Bad input");
@@ -255,6 +254,14 @@ public class Main {
         read = new Scanner(System.in);
         String userTypeAlbum = read.nextLine();
         String[] userInput = userTypeAlbum.split(",\\s*");
+
+        try {
+            Album album = new Album(userInput[0], userInput[1], userInput[2], Integer.parseInt(userInput[3]));
+            albums.add(album);
+        }
+        catch(Exception e){
+            System.out.println("Bad input");
+        }
 
         boolean albumCreated = false;
         for (Musician artist : musicians){
