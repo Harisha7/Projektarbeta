@@ -1,7 +1,5 @@
 import com.google.gson.annotations.JsonAdapter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Calendar;
 
 
 public class Musician extends Item {
@@ -39,13 +37,6 @@ public class Musician extends Item {
         return name;
     }
 
-    public void setArtistName(String ArtistName) {
-        this.artistName = artistName;
-    }
-    public String getArtistName() {
-        return artistName;
-    }
-
     public void setInfo(String info) {
         this.info = info;
     }
@@ -58,10 +49,7 @@ public class Musician extends Item {
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
     }
-    public int getBirthYear() {
-        return birthYear;
-    }
-
+    
     private int getAge(){
         return  2022 - birthYear;
     }
@@ -71,20 +59,14 @@ public class Musician extends Item {
     public void setInstrument(String instrument) {
         this.instrument = instrument;
     }
-    public String getInstrument() {
-        return instrument;
-    }
-
 
     public void setCurrentBands(Band band) {
         currentBands.add(band);
     }
 
 
-    public ArrayList<Album> getAlbums() {
-        return albums;
-    }
 
+    
     public Musician(String name, String info, Integer birthYear, String instrument) {
         setName(name);
         setInfo(info);
@@ -143,45 +125,18 @@ public class Musician extends Item {
         return currentBands;
      }
 
-    public ArrayList<Band> getOldBands(){
-
-        return oldBands;
-     }
     
     public void setOldBands(Band band){
 
         oldBands.add(band);
     }
     
-    public ArrayList<Album> getSoloAlbums(){
-
-        return soloAlbum;
-    }
     
     public void setSoloAlbum(Album album){
 
         soloAlbum.add(album);
     }
     
-    public ArrayList<String> getInstruments(){
+    
 
-        return instruments;
-     }
-
-    public void setInstruments(ArrayList<String> instruments){
-
-        this.instruments = instruments;
-    }
-
-    public void showInstruments(){
-
-        for (String instrument : instruments){
-            System.out.println(instrument);
-        }
-    }
-
-    /*@Override
-    public String toString() {
-        return "Name: " +  getName() + ", InfoText: " + getInfoText() + ", YearOfBirth: " + getYear() + ", Instruments played: " + getInstruments() + ", Age: " + getAge();
-    }*/
 }
