@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Calendar;
 
 
-public class Musician {
+public class Musician extends Item {
 
     private String name;
     private String artistName;

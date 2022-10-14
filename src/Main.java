@@ -1,3 +1,5 @@
+import com.google.gson.annotations.JsonAdapter;
+
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.ArrayList;
@@ -17,10 +19,6 @@ public class Main {
 
     @JsonAdapter(ItemListAdapter.class)
     public static List<Band> bandList = new ArrayList<>();
-
-
-
-
     public static void main(String[] args) {
         int userInput;
         boolean exitLoop = false;

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Album {
+public class Album extends Item{
     public String albumBand;
     public String albumName;
     public String albumInfo;

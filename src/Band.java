@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;;
 
-public class Band {
+public class Band extends Item{
     public String bandName;
     public String bandInfo;
     public int bandStartYear;

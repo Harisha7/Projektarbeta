@@ -30,15 +30,15 @@ public class ItemStore {
     }
 
 
-    public static Item getItemFromClassName(String className,int ) {
+    public static Item getItemFromClassName(String className) {
         return switch (className) {
-            case "Band" -> new Band("", "", null, null);
-            case "Musician" -> new Musician("", "","", null);
-            case "Album" -> new Album("", "", null);
+            case "Band" -> new Band("", "", 0, 0);
+            case "Musician" -> new Musician("", "",0, "");
+            case "Album" -> new  Album("", "", "", 0);
 
             default -> null;
         };
-        };
+
 
 
 
