@@ -188,14 +188,18 @@ public class Main {
 
     }
     public static void addBand(){
-        System.out.println("Add a band in this format: Name, Info, Year of band formed NNNN, disbanded year");
+        System.out.println("Add a band in this format: Name, Info, Year of band formed YYYY, disbanded year");
         read = new Scanner(System.in);
         String userTypeBand = read.nextLine();
         String[] userInput = userTypeBand.split(",\\s*");
-        Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) ,
-                Integer.parseInt(userInput[3]));
-        bands.add(band);
+        try{
+              Band band = new Band(userInput[0],userInput[1] , Integer.parseInt(userInput[2]) , Integer.parseInt(userInput[3]));
+              bands.add(band);
 
+        }
+        catch(Exception e){
+            System.out.println("Bad input");
+        }
     }
 
     public static void addMusician (){
