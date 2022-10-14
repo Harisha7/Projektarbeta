@@ -203,9 +203,15 @@ public class Main {
         read = new Scanner(System.in);
         String userTypeMusician = read.nextLine();
         String[] userInput = userTypeMusician.split(",\\s*");
-        Musician musician = new Musician(userInput[0],userInput[1] , Integer.parseInt(userInput[2]),
-                userInput[3]);
-        musicians.add(musician);
+        try {
+            Musician musician = new Musician(userInput[0], userInput[1], Integer.parseInt(userInput[2]),
+                    userInput[3]);
+            musicians.add(musician);
+        }
+        catch(Exception e){
+            System.out.println("Bad input");
+        }
+
 
     }
     // Add function to disallow empty character input
